@@ -1,0 +1,125 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Lead capture ─────────────────────────────────────────
+model Lead {
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
+
+  // Contact
+  name          String
+  phone         String
+  email         String?
+  zip           String
+  contactMethod String   @default("phone")
+
+  // Request
+  service       String
+  isEmergency   Boolean  @default(false)
+  notes         String?
+
+  // Attribution
+  source        String?
+  medium        String?
+  campaign      String?
+  gclid         String?
+  gbraid        String?
+  wbraid        String?
+  channel       String?
+  device        String?
+  landingPage   String?
+
+  // Meta
+  ipHash        String?
+  userAgent     String?
+  consent       Boolean  @default(true)
+
+  @@index([createdAt])
+  @@index([zip])
+  @@index([service])
+}
+
+// ── Services ─────────────────────────────────────────────
+model Service {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  category        String
+  name            String
+  status          String   @default("DRAFT")
+  seoTitle        String
+  metaDescription String
+  h1              String
+  answer          String   @db.Text
+  intro           Json     // string[]
+  signs           Json     // string[]
+  process         Json     // ServiceProcess[]
+  costFactors     Json     // string[]
+  diy             Json?    // DiyAdvice
+  faqs            Json     // ServiceFaq[]
+  related         Json     // string[]
+  isEmergencyCapable Boolean @default(false)
+  photo           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ── Locations ────────────────────────────────────────────
+model City {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  stateSlug       String
+  name            String
+  county          String
+  status          String   @default("DRAFT")
+  officeAddress   String?
+  zips            Json     // string[]
+  areas           Json     // string[]
+  intro           String   @db.Text
+  housingNotes    String   @db.Text
+  localIssues     Json     // LocalIssue[]
+  popularServices Json     // string[]
+  nearby          Json     // string[]
+  faqs            Json     // CityFaq[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ── Articles ─────────────────────────────────────────────
+model Article {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  category        String
+  title           String
+  status          String   @default("DRAFT")
+  seoTitle        String
+  metaDescription String
+  h1              String
+  answer          String   @db.Text
+  sections        Json     // ArticleSection[]
+  faqs            Json     // ServiceFaq[]
+  services        Json     // string[]
+  relatedArticles Json     // string[]
+  photo           String?
+  publishedAt     DateTime
+  reviewedBy      String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ── Reviews ──────────────────────────────────────────────
+model Review {
+  id       String   @id @default(cuid())
+  author   String
+  rating   Int
+  text     String   @db.Text
+  date     DateTime
+  city     String?
+  service  String?
+  verified Boolean  @default(false)
+}
