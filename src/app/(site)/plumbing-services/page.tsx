@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { pageMeta } from '@/lib/seo';
 import { services, categories } from '@/content/services';
 import { servicesMore } from '@/content/servicesMore';
@@ -11,6 +12,19 @@ export const metadata = pageMeta({
   description: 'Explore our complete list of residential plumbing services in the Charlotte Metro area. From drain cleaning to full repiping, SteadWell has you covered.',
   path: '/plumbing-services/',
 });
+
+function getServicePhoto(categorySlug: string): string {
+  if (categorySlug === 'drain-cleaning' || categorySlug === 'sewer') {
+    return '/photos/drain-cleaning.jpg';
+  }
+  if (categorySlug === 'water-heaters') {
+    return '/photos/water-heater.jpg';
+  }
+  if (categorySlug === 'leak-detection' || categorySlug === 'water-lines' || categorySlug === 'gas-lines') {
+    return '/photos/pipe-repair.jpg';
+  }
+  return '/photos/hero-plumber.jpg';
+}
 
 export default function ServicesHubPage() {
   const allServices = [...services, ...servicesMore].filter(s => s.status === 'PUBLISHED');
@@ -56,27 +70,37 @@ export default function ServicesHubPage() {
                   </div>
                   
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {categoryServices.map(service => (
-                      <Link 
-                        key={service.slug} 
-                        href={servicePage(service.slug)}
-                        className="group bg-white rounded-2xl ring-1 ring-line overflow-hidden hover:ring-copper transition-all shadow-sm hover:shadow-md flex flex-col"
-                      >
-                        <div className="aspect-[4/3] bg-paper overflow-hidden relative">
-                           <div className="w-full h-full bg-sky-tint" />
-                        </div>
-                        <div className="p-6 flex flex-col flex-grow">
-                          <h3 className="font-bold text-xl text-ink mb-3 group-hover:text-copper transition-colors">{service.name}</h3>
-                          <p className="text-ink/70 line-clamp-3 mb-4 flex-grow text-sm">
-                            {service.answer}
-                          </p>
-                          <div className="text-copper font-medium text-sm flex items-center gap-1 mt-auto">
-                            Learn more
-                            <span aria-hidden="true">&rarr;</span>
+                    {categoryServices.map(service => {
+                      const photoUrl = getServicePhoto(service.category);
+                      return (
+                        <Link 
+                          key={service.slug} 
+                          href={servicePage(service.slug)}
+                          className="group bg-white rounded-2xl ring-1 ring-line overflow-hidden hover:ring-copper transition-all shadow-sm hover:shadow-md flex flex-col"
+                        >
+                          <div className="aspect-[4/3] bg-paper overflow-hidden relative">
+                            <Image
+                              src={photoUrl}
+                              alt={`${service.name} service photo`}
+                              fill
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60" />
                           </div>
-                        </div>
-                      </Link>
-                    ))}
+                          <div className="p-6 flex flex-col flex-grow">
+                            <h3 className="font-bold text-xl text-ink mb-3 group-hover:text-copper transition-colors">{service.name}</h3>
+                            <p className="text-ink/70 line-clamp-3 mb-4 flex-grow text-sm">
+                              {service.answer}
+                            </p>
+                            <div className="text-copper font-medium text-sm flex items-center gap-1 mt-auto">
+                              Learn more
+                              <span aria-hidden="true">&rarr;</span>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               );
