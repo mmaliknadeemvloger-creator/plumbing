@@ -11,7 +11,7 @@ export interface AttributionData {
   capturedAt: number;
 }
 
-const STORAGE_KEY = 'steadwell_attribution';
+const STORAGE_KEY = 'elite_attribution';
 const EXPIRY_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 
 export function captureAttribution() {

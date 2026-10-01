@@ -11,13 +11,13 @@ export const Breadcrumbs = ({ items }: { items: { label: string; href?: string }
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.steadwellplumbing.com/',
+        item: 'https://www.eliteplumbingdrain.com/',
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
         name: item.label,
-        item: item.href ? `https://www.steadwellplumbing.com${item.href}` : undefined,
+        item: item.href ? `https://www.eliteplumbingdrain.com${item.href}` : undefined,
       }))
     ]
   };

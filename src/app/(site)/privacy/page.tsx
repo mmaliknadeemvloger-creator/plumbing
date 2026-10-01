@@ -2,7 +2,7 @@ import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
   title: 'Privacy Policy',
-  description: 'Privacy Policy — SteadWell Plumbing, serving Charlotte, NC metro and York County, SC.',
+  description: 'Privacy Policy — Elite Plumbing & Drain, serving Charlotte, NC metro and York County, SC.',
   path: '/privacy/',
 });
 
@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         <p>Last Updated: {new Date().toLocaleDateString()}</p>
         
         <h2>Information We Collect</h2>
-        <p>When you use SteadWell Plumbing to request services, we collect information you provide via our forms, such as your name, phone number, email address, property ZIP code, and the nature of your plumbing issue. We may also collect technical data such as IP address and browser information.</p>
+        <p>When you use Elite Plumbing & Drain to request services, we collect information you provide via our forms, such as your name, phone number, email address, property ZIP code, and the nature of your plumbing issue. We may also collect technical data such as IP address and browser information.</p>
         
         <h2>How We Use Your Information</h2>
         <p>The primary purpose of collecting your information is to connect you with up to three qualified local plumbers in the Charlotte area through our LeadSmart network. We also use your data to improve our services and analyze usage.</p>

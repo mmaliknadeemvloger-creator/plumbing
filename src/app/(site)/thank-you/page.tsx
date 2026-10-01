@@ -38,7 +38,7 @@ export default async function ThankYouPage({
         ) : (
           <div className="mb-8">
             <p className="text-lg text-gray-600 mb-6">
-              Thank you for choosing SteadWell Plumbing. We have received your request and a local plumber will contact you shortly to discuss your issue and schedule a visit.
+              Thank you for choosing Elite Plumbing & Drain. We have received your request and a local plumber will contact you shortly to discuss your issue and schedule a visit.
             </p>
           </div>
         )}

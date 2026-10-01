@@ -1,4 +1,4 @@
-# SteadWell Plumbing — Strategy Document
+# Elite Plumbing & Drain — Strategy Document
 
 > Phase 1 output: research, brand, IA, keyword clusters, PPC plan.
 
@@ -6,8 +6,8 @@
 
 | | |
 |---|---|
-| Name | **SteadWell Plumbing** (alternate: SteadWell Plumbing & Drain) |
-| Domain | steadwellplumbing.com |
+| Name | **Elite Plumbing & Drain** (alternate: Elite Plumbing & Drain) |
+| Domain | eliteplumbingdrain.com |
 | Voice | Confident, direct, technically accurate. Never claim own plumbers—this is a call brand for LeadSmart buyers. |
 | Palette | Navy (ink #002855), Sky (#0695D9), Copper (#B4552D), Alert (#B42318), Paper (#F7F4EE), Sage (#4F6B5B) |
 | Type | Source Serif 4 (headings) + Inter Tight (UI) |

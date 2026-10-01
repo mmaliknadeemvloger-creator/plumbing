@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const PUBLIC_DIR = path.join(process.cwd(), 'public');
-const BASE = process.env.BASE || 'https://steadwellplumbing.com';
+const BASE = process.env.BASE || 'https://eliteplumbingdrain.com';
 const HOST = BASE.replace(/^https?:\/\//, '');
 
 async function indexNow() {

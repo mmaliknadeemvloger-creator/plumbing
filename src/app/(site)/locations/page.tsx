@@ -8,7 +8,7 @@ import { ZipChecker } from '@/components/ZipChecker';
 
 export const metadata = pageMeta({
   title: 'Plumbing Service Area | Charlotte Metro',
-  description: 'SteadWell Plumbing serves the entire Charlotte Metro area and York County, SC. Find out if we offer expert plumbing services in your neighborhood.',
+  description: 'Elite Plumbing & Drain serves the entire Charlotte Metro area and York County, SC. Find out if we offer expert plumbing services in your neighborhood.',
   path: locationHub(),
 });
 

@@ -5,10 +5,10 @@
 const env = (key: string) => process.env[key] ?? '';
 
 // ── Brand ────────────────────────────────────────────────
-export const BRAND = 'SteadWell Plumbing' as const;
-export const BRAND_FULL = 'SteadWell Plumbing & Drain' as const;
-export const BRAND_SHORT = 'SteadWell' as const;
-export const BRAND_DOMAIN = 'steadwellplumbing.com' as const;
+export const BRAND = 'Elite Plumbing & Drain' as const;
+export const BRAND_FULL = 'Elite Plumbing & Drain' as const;
+export const BRAND_SHORT = 'Elite Plumbing' as const;
+export const BRAND_DOMAIN = 'eliteplumbingdrain.com' as const;
 
 export const BRAND_PROMISE = [
   'Upfront pricing — no surprise charges',
@@ -17,7 +17,7 @@ export const BRAND_PROMISE = [
 ] as const;
 
 export const DISCLOSURE =
-  'SteadWell Plumbing connects you with independent licensed plumbers in the Charlotte metro area. ' +
+  'Elite Plumbing & Drain connects you with independent licensed plumbers in the Charlotte metro area. ' +
   'When you request service, your information may be shared with up to three qualified plumbers who serve your area.';
 
 // ── Contact ──────────────────────────────────────────────

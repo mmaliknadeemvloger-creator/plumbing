@@ -5,7 +5,7 @@ import { storeLead } from '@/lib/lead/store';
 import { checkRateLimit } from '@/lib/lead/rateLimit';
 import { createHash } from 'crypto';
 
-const SALT = process.env.IP_SALT ?? 'steadwell-lead-salt';
+const SALT = process.env.IP_SALT ?? 'elite-lead-salt';
 
 const LeadSchema = z.object({
   service: z.string().min(1, 'Service is required'),

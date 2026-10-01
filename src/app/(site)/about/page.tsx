@@ -5,8 +5,8 @@ import { CtaBand } from '@/components/CtaBand';
 import { ZipChecker } from '@/components/ZipChecker';
 
 export const metadata = pageMeta({
-  title: 'About SteadWell Plumbing',
-  description: 'Learn about how SteadWell Plumbing connects you with top-rated Charlotte plumbers.',
+  title: 'About Elite Plumbing & Drain',
+  description: 'Learn about how Elite Plumbing & Drain connects you with top-rated Charlotte plumbers.',
   path: '/about/',
 });
 

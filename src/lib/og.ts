@@ -1,7 +1,7 @@
 export const OG_IMAGES: Record<string, { title: string; eyebrow: string; photo?: string }> = {
   home: {
     title: 'Expert Local Plumbing Services',
-    eyebrow: 'SteadWell Plumbing',
+    eyebrow: 'Elite Plumbing & Drain',
   },
   'drain-cleaning': {
     title: 'Professional Drain Cleaning',
@@ -17,6 +17,6 @@ export const OG_IMAGES: Record<string, { title: string; eyebrow: string; photo?:
   },
   'emergency': {
     title: '24/7 Emergency Plumbing',
-    eyebrow: 'SteadWell Plumbing',
+    eyebrow: 'Elite Plumbing & Drain',
   }
 };

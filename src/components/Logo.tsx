@@ -5,8 +5,8 @@ export const Logo = ({ variant = 'light', className = '' }: { variant?: 'light' 
   const textColor = variant === 'light' ? 'text-ink' : 'text-white';
   return (
     <Link href="/" className={`flex flex-col ${textColor} ${className}`}>
-      <span className="font-heading font-bold text-2xl leading-none">SteadWell</span>
-      <span className="font-body text-xs tracking-wider uppercase opacity-80 mt-1">Plumbing & Drain</span>
+      <span className="font-heading font-bold text-2xl leading-none tracking-tight">Elite</span>
+      <span className="font-body text-xs tracking-wider uppercase opacity-80 mt-1 font-semibold">Plumbing & Drain</span>
     </Link>
   );
 };

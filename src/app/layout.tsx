@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL || 'https://steadwellplumbing.com'),
+  metadataBase: new URL(SITE_URL || 'https://eliteplumbingdrain.com'),
   title: {
     template: `%s | ${BRAND}`,
     default: BRAND_FULL,

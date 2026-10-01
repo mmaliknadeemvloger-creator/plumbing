@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const stateAbbrev = state ? state.abbreviation : '';
 
   return pageMeta({
-    title: `Plumbing Services in ${city.name}, ${stateAbbrev} | SteadWell`,
+    title: `Plumbing Services in ${city.name}, ${stateAbbrev} | Elite Plumbing`,
     description: city.intro.substring(0, 155) + '...',
     path: cityPage(stateSlug, citySlug),
   });

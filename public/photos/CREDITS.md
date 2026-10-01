@@ -15,6 +15,6 @@ Attribution is provided here as best practice.
 ## Usage Notes
 
 - All before/after photos labeled as "example" are stock photography,
-  not photos of actual SteadWell jobs.
+  not photos of actual Elite Plumbing jobs.
 - Replace stock photos with real job photos as they become available
   (with homeowner consent for interior/before-after shots).

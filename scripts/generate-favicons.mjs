@@ -9,7 +9,7 @@ if (!fs.existsSync(BRAND_DIR)) {
   fs.mkdirSync(BRAND_DIR, { recursive: true });
 }
 
-// Create an SVG icon with SteadWell Plumbing branding (Navy circle with stylized droplet/shield)
+// Create an SVG icon with Elite Plumbing & Drain branding (Navy circle with stylized droplet and letter E)
 const svgIcon = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
@@ -22,7 +22,7 @@ const svgIcon = `
       <stop offset="100%" stop-color="#B4552D" />
     </linearGradient>
   </defs>
-  <!-- Background Circle -->
+  <!-- Background Shield -->
   <rect width="512" height="512" rx="128" fill="#002855" />
   
   <!-- Outer Ring Accent -->
@@ -31,15 +31,15 @@ const svgIcon = `
   <!-- Stylized Droplet / Shield Path -->
   <path d="M256 96 C256 96 140 236 140 332 C140 396 192 448 256 448 C320 448 372 396 372 332 C372 236 256 96 256 96 Z" fill="url(#skyGrad)" stroke="#38BDF8" stroke-width="16" stroke-linejoin="round" />
 
-  <!-- Inner Letter S & Water wave accent -->
-  <path d="M256 180 C230 220 200 270 200 320 C200 350 224 374 256 374 C288 374 312 350 312 320 C312 290 290 270 270 250" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" />
+  <!-- Clean Monogram "E" with Plumbing Droplet Accents -->
+  <path d="M210 200 L302 200 M210 266 L284 266 M210 332 L302 332 M210 190 L210 342" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
   
-  <circle cx="256" cy="320" r="28" fill="url(#copperGrad)" />
+  <circle cx="330" cy="332" r="18" fill="url(#copperGrad)" />
 </svg>
 `;
 
 async function generateAllIcons() {
-  console.log('Generating brand icons and favicons...');
+  console.log('Generating brand icons and favicons for Elite Plumbing & Drain...');
   const svgBuffer = Buffer.from(svgIcon);
 
   // 1. Base 512x512 logo icon
@@ -77,7 +77,7 @@ async function generateAllIcons() {
   await sharp(svgBuffer).resize(512, 512).png().toFile(android512Path);
   console.log('Created:', android512Path);
 
-  console.log('All icons generated successfully!');
+  console.log('All Elite Plumbing & Drain icons generated successfully!');
 }
 
 generateAllIcons().catch(err => {

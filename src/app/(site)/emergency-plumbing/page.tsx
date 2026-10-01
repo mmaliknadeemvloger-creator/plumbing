@@ -10,7 +10,7 @@ import { FaqList } from '@/components/FaqList';
 import { SectionHeading } from '@/components/ui';
 
 export const metadata = pageMeta({
-  title: 'Emergency Plumber Charlotte, NC | SteadWell',
+  title: 'Emergency Plumber Charlotte, NC | Elite Plumbing',
   description: '24/7 Emergency plumbing services in the Charlotte Metro area. Burst pipes, overflowing toilets, and severe leaks fixed fast.',
   path: emergencyHub(),
 });

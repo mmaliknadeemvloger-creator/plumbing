@@ -1,7 +1,7 @@
 # Local Service Lead-Gen Website — Complete Build Playbook
 
 > **How to use this file.** It's two things at once:
-> 1. The documentation for **SteadWell Plumbing** (this project), and
+> 1. The documentation for **Elite Plumbing & Drain** (this project), and
 > 2. A reusable **playbook for building the next site** the same way.
 >
 > For a new website: create an empty folder, put this README in it, and tell Claude:
@@ -14,7 +14,7 @@
 
 ## Table of contents
 
-- **Part A — This project (SteadWell)**
+- **Part A — This project (Elite Plumbing)**
   - A1. Snapshot · A2. Run it · A3. Folder map · A4. Configuration · A5. What's built · A6. Pending before launch
 - **Part B — Playbook for the next site**
   - B0. Non-negotiable rules
@@ -43,13 +43,13 @@
 
 | | |
 |---|---|
-| Brand | **SteadWell Plumbing** (short: SteadWell). The logo artwork reads "Steadwell Plumbing & Drain"; both are declared as `alternateName` in schema |
+| Brand | **Elite Plumbing & Drain** (short: Elite Plumbing). The logo artwork reads "Elite Plumbing & Drain"; both are declared as `alternateName` in schema |
 | Market | Charlotte, NC metro + York County, SC — **19 towns in 6 regions** |
 | Services | **24** in 10 categories |
 | Guides | **16** (informational, problem and how-to intent) |
 | Indexable URLs | **74** in 4 sitemaps, all within 2 clicks of home |
 | Q&A content | **~200** questions with direct answers (service, city, guide and general FAQs) |
-| Domain | **https://steadwellplumbing.com** (apex, canonical). `www.` 308-redirects in one hop |
+| Domain | **https://eliteplumbingdrain.com** (apex, canonical). `www.` 308-redirects in one hop |
 | Temporary phone | `(704) 555-0123`, from the fictional 555-01xx range. Replace with the LeadSmart number. |
 | Business model | **Call brand for LeadSmart buyers.** Independent licensed plumbers answer and do the work (see A7) |
 | Audit status | `npm run audit:seo`: **0 errors**, CLS 0, all pages static |
@@ -154,8 +154,8 @@ src/
 
 ## A6. Pending before launch
 
-- [x] Domain chosen: steadwellplumbing.com (canonical is the default; set `NEXT_PUBLIC_SITE_URL` only to override)
-- [ ] Point DNS for both `steadwellplumbing.com` and `www.steadwellplumbing.com` at the host; enable HTTPS and HTTP→HTTPS redirect at the host/CDN
+- [x] Domain chosen: eliteplumbingdrain.com (canonical is the default; set `NEXT_PUBLIC_SITE_URL` only to override)
+- [ ] Point DNS for both `eliteplumbingdrain.com` and `www.eliteplumbingdrain.com` at the host; enable HTTPS and HTTP→HTTPS redirect at the host/CDN
 - [ ] Google Search Console: add a **Domain property** (DNS TXT), submit `/sitemap.xml`, request indexing for the homepage and top service pages
 - [ ] Bing Webmaster Tools: import from Search Console, then `npm run indexnow`
 - [ ] Replace the temporary phone with the LeadSmart number
@@ -173,13 +173,13 @@ src/
 
 ## A7. Optimization phase: status (2026-09-27)
 
-> **Continue here next session:** the SteadWell pass is complete. The next site in the optimization order is **Copperline** (`D:\copperline-restoration`), followed by Sabine Crest, Kestrel, Sageline, Holdfast and Northgable. Each site is audited, fixed, tested, documented in its own README, then committed.
+> **Continue here next session:** the Elite Plumbing pass is complete. The next site in the optimization order is **Copperline** (`D:\copperline-restoration`), followed by Sabine Crest, Kestrel, Sageline, Holdfast and Northgable. Each site is audited, fixed, tested, documented in its own README, then committed.
 
 ### Business model (owner decision, 2026-09-27)
 
-Every portfolio site, SteadWell included, is a **call brand for LeadSmart buyers**:
+Every portfolio site, Elite Plumbing included, is a **call brand for LeadSmart buyers**:
 
-- **Copy:** confident, but never claims SteadWell's own plumbers, dispatchers, trucks, licenses, offices or reviews.
+- **Copy:** confident, but never claims Elite Plumbing's own plumbers, dispatchers, trucks, licenses, offices or reviews.
 - **Constants:** `BRAND_PROMISE` and `DISCLOSURE` live in `src/content/site.ts`.
 - **Disclosure placement:** the footer bottom bar, the `/lp/` footer, the form consent (which names sharing with up to three plumbers), Terms, Privacy (which describes the sharing and call tracking) and `llms.txt`.
 - **Schema:** the Organization is a plain `Organization`, no longer `Plumber`. Service nodes use `broker`, not `provider`. The brand license display and `hasCredential` were removed.
@@ -296,7 +296,7 @@ For another trade, rename `plumbing-services` (e.g. `hvac-services`) in `src/lib
 
 ## B2. Phase 2 — Brand and assets
 
-**Palette** (SteadWell; derive new ones from the client logo):
+**Palette** (Elite Plumbing; derive new ones from the client logo):
 
 | Token | Hex | Use |
 |---|---|---|
@@ -381,7 +381,7 @@ All content is typed data. Key types: `Service` (slug, name, category, status, s
 - **Sitemaps:** `/sitemap.xml` indexes `/sitemap-pages.xml`, `-services`, `-locations` and `-guides`, all from `indexableUrls()`. `lastmod` comes from content dates, **never the build time**.
 - **robots.ts:** production allows everything except `/api/`, `/thank-you/` and tracking parameters (`utm_`, `gclid`, `gbraid`, `wbraid`, `fbclid`, `msclkid`, `kw`, `ref`). Non-production disallows everything. Don't block noindexed pages that must be crawled for the noindex to be seen (`/lp/`, `/request-service/`).
 - **Structured data (`lib/schema.ts`):** a connected graph with stable `@id`s. `siteGraph()` in the layout contains the Organization/Plumber (areaServed → city places, `hasOfferCatalog` with each Service defined by `@id`, name and url, `knowsAbout`, conditional contact facts), the WebSite, and City places (→ county → state). Every page emits a `pageGraph()` WebPage (typed CollectionPage, ItemPage, AboutPage or ContactPage, adding FAQPage + Questions only for visible FAQs) with `breadcrumb`, `about` and `mainEntity`, plus Service, local Service (`isRelatedTo` the canonical one) and Article nodes. **Every `@id` referenced on a page must be defined on that page** (the audit checks this).
-- **Internal linking:** hierarchy via breadcrumbs, menus and hubs; sideways via related services, nearby towns, town chips, guides, and the state link on city pages. Contextual links come from `createLinker(path)`: a topic → owning-page table, first mention only, no self-links, at most 6 per page, and `[label](/path/)` for explicit links. Target click depth is 3 or less (SteadWell has everything at 2 or less).
+- **Internal linking:** hierarchy via breadcrumbs, menus and hubs; sideways via related services, nearby towns, town chips, guides, and the state link on city pages. Contextual links come from `createLinker(path)`: a topic → owning-page table, first mention only, no self-links, at most 6 per page, and `[label](/path/)` for explicit links. Target click depth is 3 or less (Elite Plumbing has everything at 2 or less).
 - **AEO:** every service and guide opens with a direct 1–3 sentence answer; FAQs answer in the first sentence and are rendered in HTML even when collapsed; one H1 and a logical H2/H3 order.
 - **GEO:** "at a glance" `<dl>` blocks; explicit, factual service descriptions; consistent names across nav, headings, schema and sitemaps; `/llms.txt` generated from the indexable URL list.
 - **Images:** `next/image` everywhere, `priority` only for above-the-fold heroes and the logo, `sizes` on every image, fixed aspect boxes (CLS 0), natural alt text, descriptive filenames.
@@ -393,7 +393,7 @@ Events go to `dataLayer`: `call_click`, `emergency_call_click`, `form_start`, `f
 ## B11. Phase 11 — Security and performance
 
 - **Security:** security headers, JSON-only same-origin lead API, Zod on the server, rate limit, honeypot and timing checks, `<`/`>` stripped from text, HMAC-signed webhook, salted IP hash, no PII in logs or URLs, dev-only admin endpoints, JSON-LD escaped (`<` → `<`).
-- **Performance:** every content route is static; client JavaScript is limited to the menus, form, slider, ZIP checker and tracking; fonts via `next/font`; images via `next/image`; asset cache headers. Measured on SteadWell: CLS 0, TTFB about 10ms locally, about 150KB of compressed JavaScript.
+- **Performance:** every content route is static; client JavaScript is limited to the menus, form, slider, ZIP checker and tracking; fonts via `next/font`; images via `next/image`; asset cache headers. Measured on Elite Plumbing: CLS 0, TTFB about 10ms locally, about 150KB of compressed JavaScript.
 
 ## B12. Phase 12 — QA and audit
 

@@ -1,4 +1,4 @@
-# SteadWell Plumbing — SEO Documentation
+# Elite Plumbing & Drain — SEO Documentation
 
 > Intent map, indexation rules, schema graph, linking strategy, AEO/GEO rules.
 

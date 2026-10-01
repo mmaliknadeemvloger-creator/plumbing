@@ -17,7 +17,7 @@ import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
   title: 'A Charlotte-area plumber who explains the problem before fixing it',
-  description: 'SteadWell Plumbing connects you with top-rated Charlotte plumbers.',
+  description: 'Elite Plumbing & Drain connects you with top-rated Charlotte plumbers.',
   path: '/',
 });
 

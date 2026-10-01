@@ -7,7 +7,7 @@ import { resourceHub, guidePage } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
 
 export const metadata = pageMeta({
-  title: 'Plumbing Guides & Resources | SteadWell',
+  title: 'Plumbing Guides & Resources | Elite Plumbing',
   description: 'Expert plumbing guides, DIY tips, and answers to common household water and pipe issues. Learn how to maintain your home\'s plumbing.',
   path: resourceHub(),
 });

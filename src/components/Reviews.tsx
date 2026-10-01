@@ -5,7 +5,7 @@ import type { Review } from '@/content/types';
 
 export const Reviews = ({ reviews }: { reviews?: Review[] }) => {
   const hasReviews = true; 
-  const googleUrl = 'https://g.page/r/steadwell';
+  const googleUrl = 'https://g.page/r/eliteplumbing';
 
   if (!hasReviews && !googleUrl) return null;
 
@@ -34,7 +34,7 @@ export const Reviews = ({ reviews }: { reviews?: Review[] }) => {
             <div className="flex text-copper mb-4">
               {[...Array(5)].map((_, j) => <StarIcon key={j} className="w-4 h-4 fill-current" />)}
             </div>
-            <p className="text-ink/80 italic mb-4">"Absolutely fantastic service. They were here within an hour and fixed the leak immediately. Highly recommend SteadWell Plumbing!"</p>
+            <p className="text-ink/80 italic mb-4">"Absolutely fantastic service. They were here within an hour and fixed the leak immediately. Highly recommend Elite Plumbing & Drain!"</p>
             <div className="font-bold text-sm">- Jane Doe, Charlotte</div>
           </div>
         ))}

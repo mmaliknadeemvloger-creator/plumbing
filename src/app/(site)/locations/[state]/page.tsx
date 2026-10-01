@@ -45,7 +45,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               Plumbing Services in {state.name}
             </h1>
             <p className="text-xl text-white/80">
-              SteadWell Plumbing provides licensed, professional plumbing services throughout our {state.name} service area.
+              Elite Plumbing & Drain provides licensed, professional plumbing services throughout our {state.name} service area.
             </p>
           </div>
         </div>

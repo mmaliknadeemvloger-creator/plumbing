@@ -4,8 +4,8 @@ import { LeadFormBlock } from '@/components/lead/LeadFormBlock';
 import { BRAND } from '@/content/site';
 
 export const metadata = pageMeta({
-  title: 'Contact SteadWell Plumbing',
-  description: 'Get in touch with SteadWell Plumbing for service in the Charlotte area.',
+  title: 'Contact Elite Plumbing & Drain',
+  description: 'Get in touch with Elite Plumbing & Drain for service in the Charlotte area.',
   path: '/contact/',
 });
 

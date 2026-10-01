@@ -9,7 +9,7 @@ import { CtaBand } from '@/components/CtaBand';
 
 export const metadata = pageMeta({
   title: 'Plumbing Services in Charlotte, NC',
-  description: 'Explore our complete list of residential plumbing services in the Charlotte Metro area. From drain cleaning to full repiping, SteadWell has you covered.',
+  description: 'Explore our complete list of residential plumbing services in the Charlotte Metro area. From drain cleaning to full repiping, Elite Plumbing has you covered.',
   path: '/plumbing-services/',
 });
 
