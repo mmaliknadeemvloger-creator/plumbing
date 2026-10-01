@@ -152,16 +152,13 @@ export default function HomePage() {
         <section className="py-16 bg-paper">
           <div className="container-x max-w-4xl">
             <div className="text-center mb-10">
-              <span className="eyebrow text-copper mb-2 block font-semibold">Real Results</span>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink">See the Hydro-Jetting Difference</h2>
-              <p className="text-ink/70 mt-2">Drag the slider to compare clogged pipe inspection footage before and after hydro-jetting service.</p>
+              <span className="eyebrow text-copper mb-2 block font-semibold">Real Plumbing & Drain Results</span>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink">See the Difference: Before & Now</h2>
+              <p className="text-ink/70 mt-2 max-w-2xl mx-auto">
+                Explore real plumbing transformations across drain hydro-jetting, under-sink drain replacement, and whole-house copper repiping.
+              </p>
             </div>
-            <BeforeAfterSlider
-              beforeImage="/photos/before-drain.jpg"
-              afterImage="/photos/after-drain.jpg"
-              beforeAlt="Clogged drain pipe with heavy grease and scale buildup before cleaning"
-              afterAlt="Clean drain pipe with smooth walls and clear water flow after hydro-jetting service"
-            />
+            <BeforeAfterSlider pairs={beforeAfterPairs} />
           </div>
         </section>
       )}
