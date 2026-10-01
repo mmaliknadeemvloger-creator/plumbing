@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { BRAND, PPC_PHONE } from '@/content/site';
+import { Logo } from '@/components/Logo';
+import { PPC_PHONE } from '@/content/site';
 
 export const metadata: Metadata = {
   robots: {
@@ -19,10 +19,8 @@ export default function LandingPageLayout({
       {/* Top bar */}
       <header className="bg-white border-b border-line py-4 sticky top-0 z-50 shadow-sm">
         <div className="container-x flex items-center justify-between">
-          <Link href="/" className="font-heading font-bold text-2xl text-ink">
-            {BRAND}
-          </Link>
-          <a href={`tel:${PPC_PHONE.replace(/\\D/g, '')}`} className="btn btn-primary text-lg px-6 py-2">
+          <Logo variant="light" />
+          <a href={`tel:${PPC_PHONE.replace(/\D/g, '')}`} className="btn btn-primary text-lg px-6 py-2">
             Call {PPC_PHONE}
           </a>
         </div>
