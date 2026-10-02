@@ -8,8 +8,8 @@ import { servicePage, emergencyHub } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
 
 export const metadata = pageMeta({
-  title: 'Plumbing Services in Charlotte, NC',
-  description: 'Explore our complete list of residential plumbing services in the Charlotte Metro area. From drain cleaning to full repiping, Elite Plumbing has you covered.',
+  title: 'Plumbing Services Across the USA | Elite Plumbing',
+  description: 'Explore our complete list of residential and commercial plumbing services across the USA. Fast drain cleaning, water heater repair, leak detection, repiping, and 24/7 emergency dispatch.',
   path: '/plumbing-services/',
 });
 
@@ -34,16 +34,17 @@ export default function ServicesHubPage() {
       <section className="bg-ink pt-20 pb-24 text-white">
         <div className="container-x">
           <div className="max-w-3xl">
-            <span className="eyebrow text-sky mb-4 block">Our Services</span>
+            <span className="eyebrow text-sky mb-4 block uppercase tracking-wider font-semibold text-xs">Full-Service Catalog</span>
             <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-              Charlotte Metro Plumbing Services
+              Professional Plumbing Services Across the USA
             </h1>
             <p className="text-xl text-white/80">
-              From minor leaks to major underground repairs, our licensed professionals handle every aspect of your home's plumbing with precision and care.
+              From emergency clog removal and water heater replacements to complex commercial build-outs, our licensed plumbers deliver dependable, code-compliant workmanship nationwide.
             </p>
           </div>
         </div>
       </section>
+
 
       <section className="py-20 bg-paper">
         <div className="container-x">

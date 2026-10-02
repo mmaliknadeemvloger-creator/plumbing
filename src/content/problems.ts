@@ -44,9 +44,10 @@ export const problems: Problem[] = [
   {
     symptom: 'Garbage disposal humming but not spinning',
     cause: 'Jammed impeller blades',
-    serviceSlug: 'garbage-disposal-repair',
+    serviceSlug: 'garbage-disposal',
     guideSlug: 'garbage-disposal-tips'
   },
+
   {
     symptom: 'Unexplained high water bill',
     cause: 'Hidden leak, usually slab or toilet',

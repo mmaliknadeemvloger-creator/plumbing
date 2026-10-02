@@ -1,6 +1,7 @@
 import { ServiceCategory, Service } from '@/content/types';
 
 export const categories: ServiceCategory[] = [
+  { slug: 'general-plumbing', name: 'General & Comprehensive Plumbing', description: 'Full-service residential, commercial, installation, and inspection solutions nationwide.' },
   { slug: 'drain-cleaning', name: 'Drain Cleaning', description: 'Clear stubborn clogs and restore flow to your drains.' },
   { slug: 'sewer', name: 'Sewer Services', description: 'Complete sewer line inspection, repair, and replacement.' },
   { slug: 'water-heaters', name: 'Water Heaters', description: 'Installation, repair, and maintenance for tank and tankless heaters.' },
@@ -12,6 +13,7 @@ export const categories: ServiceCategory[] = [
   { slug: 'water-treatment', name: 'Water Treatment', description: 'Softeners and filtration systems for clean, healthy water.' },
   { slug: 'outdoor', name: 'Outdoor Plumbing', description: 'Hose bibs, outdoor faucets, and irrigation line repairs.' }
 ];
+
 
 export const services: Service[] = [
   {
@@ -618,5 +620,360 @@ export const services: Service[] = [
     ],
     related: ['leak-detection', 'water-line-repair', 'repiping'],
     isEmergencyCapable: true
+  },
+  {
+    slug: 'residential-plumbing',
+    category: 'general-plumbing',
+    name: 'Residential Plumbing',
+    status: 'PUBLISHED',
+    seoTitle: 'Residential Plumbing Services Across the USA | Elite Plumbing',
+    metaDescription: 'Trusted residential plumbing services nationwide. From drain cleaning and pipe repair to water heater installation, get fast help from licensed local plumbers.',
+    h1: 'Residential Plumbing Services Nationwide',
+    answer: 'Residential plumbing services encompass full-scope repairs, maintenance, and new installations for single-family homes, townhouses, and multi-family residences across the United States. Our licensed plumbers handle everything from leaky faucets to main sewer line replacements.',
+    intro: [
+      'Your home’s plumbing system is an intricate network of supply lines, drainage pipes, vents, and fixtures that keep your daily routine running smoothly. When a drain clogs, a water heater fails, or a pipe bursts behind drywall, you need dependable residential plumbers who diagnose the root problem quickly and provide permanent solutions.',
+      'Elite Plumbing connects homeowners across the USA with licensed, pre-screened plumbing contractors. We focus on transparent upfront pricing, clean workmanship, and code-compliant installations. Whether you need an emergency repair or are planning a kitchen or bathroom remodel, our nationwide network delivers exceptional service backed by guaranteed craftsmanship.'
+    ],
+    signs: [
+      'Low water pressure across multiple bathroom or kitchen fixtures.',
+      'Slow drains or recurring clogs in sinks, showers, and toilets.',
+      'Unexplained spikes in your monthly water utility bills.',
+      'Water heater delivering insufficient hot water or producing rumbling sounds.',
+      'Damp spots, water stains, or mildew odors near baseboards and ceilings.'
+    ],
+    process: [
+      { step: 1, title: 'In-Depth Evaluation', description: 'Our licensed residential plumbers perform a comprehensive diagnostic inspection of your fixtures and piping.' },
+      { step: 2, title: 'Clear Upfront Estimate', description: 'You receive transparent pricing options with no hidden fees before any work begins.' },
+      { step: 3, title: 'Expert Repair or Installation', description: 'Work is completed using premium materials, modern tools, and strict compliance with local plumbing codes.' },
+      { step: 4, title: 'Complete Cleanup & Quality Check', description: 'We test all connections under full pressure, clean up the workspace, and ensure 100% satisfaction.' }
+    ],
+    costFactors: [
+      'The specific type of repair (simple fixture rebuild vs. underground sewer repair).',
+      'Accessibility of the plumbing lines (crawl space, slab foundation, or behind drywall).',
+      'Material choices such as PEX, copper, or PVC replacement pipes.',
+      'Urgency of service (standard scheduling vs. 24/7 emergency dispatch).'
+    ],
+    diy: {
+      safe: [
+        'Replacing standard faucet aerators or showerheads to improve flow.',
+        'Using a hand plunger on minor toilet or sink blockages.',
+        'Turning off local fixture shutoff valves during a minor leak.'
+      ],
+      stop: [
+        'Attempting to solder copper pipes without proper fire safety and trade tools.',
+        'Using caustic chemical drain cleaners that eat through residential piping.',
+        'Modifying main water service lines or water heater gas connections.'
+      ]
+    },
+    faqs: [
+      { question: 'What residential plumbing services do you offer?', answer: 'We offer full-service residential plumbing, including drain cleaning, sewer repair, water heater installation and repair, leak detection, pipe repiping, toilet and faucet repair, garbage disposal service, and gas line plumbing.' },
+      { question: 'Are your residential plumbers licensed and insured?', answer: 'Yes, every plumbing contractor in our nationwide network is thoroughly vetted, licensed, background-checked, and fully insured for your peace of mind.' },
+      { question: 'How quickly can a residential plumber arrive?', answer: 'For urgent emergencies, dispatch can be arranged immediately. For routine repairs and installations, same-day and next-day appointment windows are readily available.' }
+    ],
+    related: ['emergency-plumbing', 'commercial-plumbing', 'drain-cleaning', 'water-heater-services', 'leak-repair'],
+    isEmergencyCapable: true
+  },
+  {
+    slug: 'commercial-plumbing',
+    category: 'general-plumbing',
+    name: 'Commercial Plumbing',
+    status: 'PUBLISHED',
+    seoTitle: 'Commercial Plumbing Contractors Across the USA | Elite Plumbing',
+    metaDescription: 'Reliable commercial plumbing services nationwide for businesses, offices, restaurants, and facilities. 24/7 commercial emergency repairs and maintenance.',
+    h1: 'Commercial Plumbing Services Nationwide',
+    answer: 'Commercial plumbing services deliver heavy-duty plumbing solutions for businesses, retail facilities, office buildings, restaurants, and industrial complexes across the USA. We handle high-capacity drainage, grease traps, commercial water heaters, and code compliance.',
+    intro: [
+      'Commercial plumbing systems endure significantly higher usage volumes and stricter regulatory requirements than residential systems. A single plumbing failure in a commercial building—such as an overflowing restroom, a blocked grease trap, or a commercial boiler failure—can halt business operations, violate health codes, and result in substantial revenue loss.',
+      'Elite Plumbing provides responsive, high-capacity commercial plumbing services across the United States. Our commercial contractors understand the urgency of minimizing downtime. We work efficiently around your operating hours to deliver robust diagnostics, preventative maintenance plans, hydro-jetting, backflow testing, and commercial fixture installations.'
+    ],
+    signs: [
+      'Frequent mainline backups affecting multiple commercial restrooms.',
+      'Foul grease or sewer gas odors in customer or dining areas.',
+      'Failed annual municipal backflow prevention inspection.',
+      'Commercial water heater or boiler failing to meet peak demand.',
+      'Visible corrosion or leaks in high-pressure supply lines.'
+    ],
+    process: [
+      { step: 1, title: 'Commercial Site Assessment', description: 'We review building plans, fixture loads, and inspect affected commercial systems.' },
+      { step: 2, title: 'Operational Plan & Quote', description: 'We provide an upfront quote and schedule work to minimize disruption to customers and staff.' },
+      { step: 3, title: 'Heavy-Duty Execution', description: 'Commercial-grade equipment—such as commercial hydro-jetters and pipe locators—is deployed for rapid resolution.' },
+      { step: 4, title: 'Code Testing & Certification', description: 'System undergoes full capacity testing and required municipal documentation is completed.' }
+    ],
+    costFactors: [
+      'Size and scale of the commercial facility (multi-story buildings vs. standalone retail units).',
+      'Specialized commercial equipment required (high-capacity hydro jetters, excavation gear).',
+      'Compliance and permitting requirements for municipal grease and backflow standards.',
+      'Off-hours or emergency scheduling to prevent business disruption.'
+    ],
+    diy: {
+      safe: [
+        'Checking and recording water pressure readings on building supply gauges.',
+        'Scheduling regular scheduled preventative cleanings for grease interceptors.',
+        'Posting proper fixture usage signage in public and employee restrooms.'
+      ],
+      stop: [
+        'Allowing untrained staff to service commercial gas boilers or main water valves.',
+        'Pouring chemical degreasers down commercial kitchen drain lines.'
+      ]
+    },
+    faqs: [
+      { question: 'What commercial industries do you service?', answer: 'We service restaurants, retail stores, corporate offices, healthcare clinics, multi-family apartment complexes, warehouses, hotels, and schools across the country.' },
+      { question: 'Do you offer 24/7 emergency commercial plumbing?', answer: 'Yes, commercial plumbing emergencies require immediate action to protect operations. Our network provides 24/7 emergency dispatch for burst lines, severe backups, and hot water outages.' },
+      { question: 'Can you handle commercial backflow testing and certification?', answer: 'Yes, our certified commercial technicians perform mandatory annual backflow prevention assembly testing, repair, and state compliance reporting.' }
+    ],
+    related: ['residential-plumbing', 'drain-cleaning', 'hydro-jetting', 'sewer-line-repair', 'water-heater-services'],
+    isEmergencyCapable: true
+  },
+  {
+    slug: 'water-heater-services',
+    category: 'water-heaters',
+    name: 'Water Heater Services',
+    status: 'PUBLISHED',
+    seoTitle: 'Complete Water Heater Services Across the USA | Elite Plumbing',
+    metaDescription: 'Expert water heater repair, replacement, and tankless installation across the USA. Fast same-day service for gas, electric, and hybrid water heaters.',
+    h1: 'Water Heater Services: Repair, Replacement & Tankless',
+    answer: 'Water heater services cover complete diagnostic repair, routine maintenance, new tank installation, and tankless conversions for both residential and commercial properties nationwide.',
+    intro: [
+      'Reliable hot water is essential for sanitation, cooking, and everyday comfort. When your water heater breaks down, leaks, or fails to reach adequate temperatures, you need prompt and professional service to restore your hot water supply without delay.',
+      'Elite Plumbing provides comprehensive water heater solutions across the USA. We service and install all major brands and models, including atmospheric gas heaters, power-vent systems, electric tanks, heat pump hybrids, and high-efficiency on-demand tankless water heaters. Our technicians evaluate your household water usage to recommend the most energy-efficient, cost-effective solution.'
+    ],
+    signs: [
+      'No hot water or hot water depleting rapidly during normal use.',
+      'Rusty or discolored water when running hot water taps.',
+      'Loud banging, popping, or rumbling noises from inside the tank.',
+      'Active water pooling around the base or temperature/pressure valve.',
+      'Water heater unit is over 10 years old and showing exterior corrosion.'
+    ],
+    process: [
+      { step: 1, title: 'Thermal & Electrical Diagnostics', description: 'Technicians test heating elements, thermostats, thermocouples, and gas valves.' },
+      { step: 2, title: 'Repair vs. Replacement Analysis', description: 'We provide clear cost comparisons so you can make the smartest financial decision.' },
+      { step: 3, title: 'Precision Installation or Repair', description: 'Parts are replaced or a new unit is installed with proper expansion tanks and ventilation.' },
+      { step: 4, title: 'Safety & Flow Calibration', description: 'We verify proper gas draft, check for zero leaks, and set temperatures to a safe 120°F.' }
+    ],
+    costFactors: [
+      'Type of unit: conventional storage tank vs. high-efficiency tankless system.',
+      'Fuel type: standard electric, natural gas, propane, or hybrid heat pump.',
+      'Capacity needs (40-gallon, 50-gallon, 80-gallon, or continuous GPM rating).',
+      'Venting modifications or electrical panel upgrades required for modern code compliance.'
+    ],
+    diy: {
+      safe: [
+        'Checking circuit breakers to confirm an electric water heater has power.',
+        'Inspecting the pilot light window on a gas unit according to manufacturer instructions.',
+        'Testing the temperature setting on the thermostat dial.'
+      ],
+      stop: [
+        'Tampering with the temperature and pressure relief valve (T&P) while the tank is hot.',
+        'Attempting DIY gas line connections or gas valve replacements.'
+      ]
+    },
+    faqs: [
+      { question: 'Should I repair or replace my water heater?', answer: 'If your water heater is under 8 years old and requires a minor component repair (like a thermostat or element), repair is typically best. If the tank is over 10-12 years old or the tank body itself is leaking, replacement is the safest, most economical choice.' },
+      { question: 'What are the benefits of upgrading to a tankless water heater?', answer: 'Tankless water heaters provide continuous, endless hot water, consume up to 34% less energy, take up a fraction of the wall space, and last 15-20 years compared to 8-12 years for traditional tanks.' },
+      { question: 'How often should a water heater be flushed?', answer: 'We recommend flushing your water heater once a year to remove mineral sediment that reduces heating efficiency and causes tank corrosion.' }
+    ],
+    related: ['water-heater-repair', 'water-heater-installation', 'tankless-water-heater', 'gas-line-installation'],
+    isEmergencyCapable: true
+  },
+  {
+    slug: 'leak-repair',
+    category: 'leak-detection',
+    name: 'Leak Detection & Repair',
+    status: 'PUBLISHED',
+    seoTitle: 'Water Leak Detection & Repair Services Across the USA | Elite Plumbing',
+    metaDescription: 'Pinpoint and fix hidden water leaks fast. Non-invasive acoustic & thermal leak detection and durable pipe repairs for homes and businesses nationwide.',
+    h1: 'Professional Water Leak Detection & Repair Services',
+    answer: 'Leak detection and repair involves using acoustic sonar, infrared thermal imaging, and pressure testing to locate hidden plumbing leaks behind walls, under concrete slabs, or underground, followed by precise, minimally invasive pipe repairs.',
+    intro: [
+      'Unchecked water leaks can quickly cause thousands of dollars in structural damage, encourage toxic black mold growth, and waste thousands of gallons of water. Because water travels along framing and pipes, the spot where water appears on your ceiling or floor is rarely where the leak originates.',
+      'Elite Plumbing provides advanced, non-invasive water leak detection and rapid repair services across the United States. Our experienced plumbers utilize acoustic microphones, tracer gas, and infrared technology to pinpoint the exact leak location without tearing apart your home. Once identified, we execute durable repairs using modern materials like PEX, copper, and seamless epoxy linings.'
+    ],
+    signs: [
+      'Continuous sound of running water when all taps and appliances are shut off.',
+      'Unexplained increases in your monthly municipal water utility bill.',
+      'Damp or warm spots on carpet, hardwood, or tile floors (slab leak symptoms).',
+      'Cracking drywall, peeling paint, or musty mildew odors.',
+      'Water meter dial spinning when no water is being consumed in the building.'
+    ],
+    process: [
+      { step: 1, title: 'Pressure & Meter Diagnostics', description: 'We isolate the supply lines to confirm pressure loss and verify active leakage.' },
+      { step: 2, title: 'Non-Invasive Electronic Locating', description: 'Thermal imaging and acoustic listening devices pinpoint the exact leak coordinates.' },
+      { step: 3, title: 'Targeted Surgical Access', description: 'We create minimal openings directly at the leak site to preserve your floors and walls.' },
+      { step: 4, title: 'Permanent Pipe Repair & Testing', description: 'The compromised pipe is replaced or lined, and the entire system is re-pressurized.' }
+    ],
+    costFactors: [
+      'Location of the leak (accessible wall cavity vs. deep under a concrete slab foundation).',
+      'Depth and length of the pipe run requiring replacement.',
+      'Type of repair method: spot repair, pipe rerouting, or whole-line replacement.',
+      'Extent of surrounding restoration or drywall repair needed.'
+    ],
+    diy: {
+      safe: [
+        'Checking all visible toilet flappers and sink shutoffs for surface drips.',
+        'Shutting off the main water valve immediately if water is actively flooding.',
+        'Placing towels and buckets to catch immediate dripping water.'
+      ],
+      stop: [
+        'Randomly knocking holes in drywall searching for hidden moisture.',
+        'Using temporary wrap tape as a permanent fix on pressurized supply lines.'
+      ]
+    },
+    faqs: [
+      { question: 'How do you find leaks without damaging walls?', answer: 'We use non-invasive diagnostic tools, including thermal imaging cameras that detect moisture temperature differentials and acoustic sensors that listen for the high-frequency vibration of escaping water.' },
+      { question: 'What is a slab leak and how is it repaired?', answer: 'A slab leak is a leak in the copper or PEX water lines running beneath your home’s concrete foundation. Repairs can be done via direct spot repair, rerouting the pipe through walls/attics, or trenchless epoxy pipe lining.' },
+      { question: 'Will my homeowner’s insurance cover leak repair?', answer: 'In many cases, insurance covers the water damage caused by sudden and accidental plumbing leaks. We provide detailed diagnostic reports that you can submit to your insurance adjuster.' }
+    ],
+    related: ['leak-detection', 'slab-leak-repair', 'pipe-repair', 'repiping', 'water-line-repair'],
+    isEmergencyCapable: true
+  },
+  {
+    slug: 'toilet-faucet-repair',
+    category: 'fixtures',
+    name: 'Toilet & Faucet Repair',
+    status: 'PUBLISHED',
+    seoTitle: 'Toilet & Faucet Repair Services Across the USA | Elite Plumbing',
+    metaDescription: 'Fix running toilets, leaky faucets, low pressure, and broken handles. Fast, affordable fixture repair and installation services nationwide.',
+    h1: 'Toilet & Faucet Repair & Replacement Nationwide',
+    answer: 'Toilet and faucet repair services resolve chronic drips, running tanks, weak flushes, faulty valves, and handle malfunctions. We also provide professional installation of new, high-efficiency kitchen and bathroom fixtures.',
+    intro: [
+      'Toilets and faucets are the hardest working fixtures in any home or commercial building. A single dripping faucet can waste over 3,000 gallons of water per year, while a running toilet flapper can waste up to 200 gallons every day. Beyond wasted water, fixture leaks can rot vanity cabinets, soften subfloors, and cause severe moisture damage.',
+      'Elite Plumbing connects you with licensed plumbing technicians nationwide to service, rebuild, or replace all types of faucets and toilets. From luxury kitchen pull-down sprayers and touchless electronic faucets to dual-flush and smart toilets, we ensure clean, watertight installations and long-lasting performance.'
+    ],
+    signs: [
+      'Toilet continuously running, hissing, or phantom flushing on its own.',
+      'Water pooling around the base of the toilet bowl on the floor.',
+      'Constant dripping from the faucet spout or leaking under the sink vanity.',
+      'Stiff, squeaking, or loose faucet handles that are difficult to operate.',
+      'Weak flushing power or frequent toilet clogs requiring plunging.'
+    ],
+    process: [
+      { step: 1, title: 'Component Inspection', description: 'We examine cartridges, O-rings, shutoff valves, flappers, and wax seals.' },
+      { step: 2, title: 'Rebuild or Replacement Plan', description: 'We provide clear recommendations for part replacement or new fixture upgrades.' },
+      { step: 3, title: 'Precision Installation', description: 'High-grade replacement parts or new brand-name fixtures are installed securely.' },
+      { step: 4, title: 'Watertight Verification', description: 'We run multiple flush cycles and high-pressure water tests to verify zero leaks.' }
+    ],
+    costFactors: [
+      'Scope of repair: simple internal cartridge replacement vs. full fixture replacement.',
+      'Condition of supply lines and under-sink shutoff valves.',
+      'Floor condition (rotted subfloor or damaged toilet closet flange requires restoration).',
+      'Fixture grade (standard residential fixtures vs. high-end smart fixtures).'
+    ],
+    diy: {
+      safe: [
+        'Replacing an accessible toilet flapper or tank handle.',
+        'Cleaning mineral deposits from faucet aerators using white vinegar.',
+        'Using a standard flange plunger to clear minor toilet clogs.'
+      ],
+      stop: [
+        'Over-tightening toilet mounting bolts, which can instantly crack the porcelain bowl.',
+        'Using heavy wrenches on decorative faucet finishes without protective padding.'
+      ]
+    },
+    faqs: [
+      { question: 'Why does my toilet keep running after flushing?', answer: 'A running toilet is typically caused by a worn-out rubber flapper, an improperly adjusted float, or a failing fill valve. Replacing these internal components restores normal operation.' },
+      { question: 'Can you repair my existing faucet or do I need a new one?', answer: 'Most major faucet brands (Moen, Delta, Kohler, American Standard) can be easily repaired by replacing the internal cartridge and O-rings. If the faucet body is corroded or cracked, replacement is recommended.' },
+      { question: 'Why is there water on the bathroom floor around the toilet base?', answer: 'Water around the base usually indicates that the wax ring seal between the toilet and the drain flange has failed. This requires unbolting the toilet, replacing the wax ring, and resetting the fixture.' }
+    ],
+    related: ['toilet-repair', 'faucet-repair', 'shower-repair', 'garbage-disposal', 'drain-cleaning'],
+    isEmergencyCapable: false
+  },
+  {
+    slug: 'plumbing-installation',
+    category: 'general-plumbing',
+    name: 'Plumbing Installation',
+    status: 'PUBLISHED',
+    seoTitle: 'Plumbing Installation & Remodeling Across the USA | Elite Plumbing',
+    metaDescription: 'Professional plumbing installation for homes and commercial buildings nationwide. Fixtures, water heaters, repiping, and new construction plumbing.',
+    h1: 'Professional Plumbing Installation Services Across the USA',
+    answer: 'Plumbing installation involves installing new water lines, drain-waste-vent (DWV) systems, water heaters, filtration units, and luxury fixtures for residential remodels, additions, and commercial build-outs.',
+    intro: [
+      'Whether you are building a new home, remodeling a kitchen, adding an ensuite bathroom, or upgrading commercial facilities, expert plumbing installation is the foundation of long-term property value and reliability. Substandard installation leads to hidden leaks, code violations, poor drainage slopes, and costly renovations down the line.',
+      'Elite Plumbing connects you with certified, licensed plumbing contractors across the USA who specialize in new installations and remodeling projects. We adhere strictly to national Uniform Plumbing Code (UPC) and International Plumbing Code (IPC) standards, ensuring all sizing, venting, water supply lines, and fixture installations pass municipal inspections on the first attempt.'
+    ],
+    signs: [
+      'Planning a kitchen, bathroom, or laundry room remodel.',
+      'Building an addition, mother-in-law suite, or detached garage workspace.',
+      'Converting from an electric water heater to an energy-efficient gas tankless system.',
+      'Replacing outdated galvanized or polybutylene pipes with modern PEX piping.',
+      'Installing new commercial sinks, dishwashers, or utility lines.'
+    ],
+    process: [
+      { step: 1, title: 'Blueprint & Load Planning', description: 'We calculate fixture units, water supply demand, and design optimized pipe routes.' },
+      { step: 2, title: 'Permits & Code Coordination', description: 'We handle local municipal permit applications and schedule required milestone inspections.' },
+      { step: 3, title: 'Rough-In Installation', description: 'Supply lines, drainage pipes, and vent stacks are precisely routed, secured, and pressure-tested.' },
+      { step: 4, title: 'Trim-Out & Fixture Setting', description: 'Sinks, faucets, toilets, tubs, and appliances are installed, connected, and calibrated.' }
+    ],
+    costFactors: [
+      'Scope of the project (single fixture installation vs. full-house new construction plumbing).',
+      'Structural access (open framing vs. retrofitting through finished drywall and slabs).',
+      'Material selections: premium PEX-A, copper, cast iron drainage, or PVC.',
+      'Municipal permit fees and local inspection requirements.'
+    ],
+    diy: {
+      safe: [
+        'Selecting and purchasing preferred decorative trim, sinks, and faucets.',
+        'Clearing work zones and storage areas before plumbers arrive on site.'
+      ],
+      stop: [
+        'Attempting rough-in plumbing without code knowledge of proper drainage pitch and venting.',
+        'Connecting gas appliances without certified pressure testing.'
+      ]
+    },
+    faqs: [
+      { question: 'Do I need a building permit for new plumbing installations?', answer: 'Yes, most cities and counties require permits for new plumbing lines, water heater replacements, bathroom additions, and major remodeling to ensure safety and code compliance.' },
+      { question: 'What is the difference between rough-in and trim-out plumbing?', answer: 'Rough-in plumbing involves installing all underground and in-wall pipes, vents, and valve bodies before drywall is hung. Trim-out occurs after walls and tile are finished, where fixtures, faucets, and toilets are mounted.' },
+      { question: 'Can you install customer-supplied plumbing fixtures?', answer: 'Yes, our licensed plumbers can install high-quality fixtures you have purchased, provided they meet standard US plumbing specifications and local code requirements.' }
+    ],
+    related: ['residential-plumbing', 'commercial-plumbing', 'repiping', 'water-heater-services', 'gas-line-installation'],
+    isEmergencyCapable: false
+  },
+  {
+    slug: 'plumbing-inspection',
+    category: 'general-plumbing',
+    name: 'Plumbing Inspection',
+    status: 'PUBLISHED',
+    seoTitle: 'Plumbing Inspection & Diagnostics Across the USA | Elite Plumbing',
+    metaDescription: 'Comprehensive plumbing inspections for home buyers, owners, and commercial properties nationwide. High-definition video camera inspections and diagnostic testing.',
+    h1: 'Whole-Home Plumbing Inspection & Diagnostics',
+    answer: 'A whole-home plumbing inspection is a comprehensive diagnostic evaluation of your entire plumbing infrastructure, including supply lines, drains, sewer mains, water heaters, gas lines, and fixtures, using advanced diagnostic tools and video cameras.',
+    intro: [
+      'Many serious plumbing issues develop silently out of sight—under concrete slabs, inside wall cavities, or deep underground in the sewer line. By the time a leak or root intrusion becomes obvious, severe property damage may have already occurred. A professional plumbing inspection provides complete transparency regarding the health and safety of your plumbing system.',
+      'Elite Plumbing provides comprehensive residential and commercial plumbing inspections across the United States. Whether you are purchasing a new home, conducting preventative maintenance, or seeking the root cause of recurring drainage failures, our licensed inspectors provide thorough diagnostic evaluations and clear, documented reports with zero high-pressure sales tactics.'
+    ],
+    signs: [
+      'You are in the process of purchasing a home and want a specialized plumbing inspection.',
+      'Your home is over 20 years old and has never had its plumbing infrastructure evaluated.',
+      'Experiencing recurring clogs or unexplained water pressure fluctuations.',
+      'Suspecting hidden leaks due to unexplained spikes in water bills.',
+      'Preparing to sell a property and wanting to resolve potential inspection red flags early.'
+    ],
+    process: [
+      { step: 1, title: 'Fixture & Valve Testing', description: 'We test all faucets, toilets, emergency shutoff valves, and check for hidden moisture.' },
+      { step: 2, title: 'Water Heater & Pressure Check', description: 'We verify static water pressure, thermal expansion tanks, and water heater safety valves.' },
+      { step: 3, title: 'Sewer Camera Inspection', description: 'A high-definition video camera travels through the main sewer line to inspect for roots and cracks.' },
+      { step: 4, title: 'Comprehensive Report', description: 'You receive a detailed digital report with photos, video footage, and prioritized repair guidance.' }
+    ],
+    costFactors: [
+      'Scope of the inspection (standard visual check vs. full sewer video camera inspection).',
+      'Size of the property and number of plumbing fixtures.',
+      'Cleanout accessibility (if a cleanout is buried or missing, access requires additional labor).'
+    ],
+    diy: {
+      safe: [
+        'Regularly testing your main water shutoff valve to ensure it turns smoothly.',
+        'Checking under sink vanities periodically for any dampness or mineral staining.'
+      ],
+      stop: [
+        'Relying solely on a general home inspection for sewer line health; general home inspectors do not perform full sewer camera runs.'
+      ]
+    },
+    faqs: [
+      { question: 'Why should I get a plumbing inspection before buying a house?', answer: 'Standard home inspections only check if faucets run and toilets flush. A dedicated plumbing inspection with a sewer camera reveals hidden issues like collapsed sewer pipes, slab leaks, and galvanized corrosion that can cost thousands of dollars to fix.' },
+      { question: 'How long does a full plumbing inspection take?', answer: 'A comprehensive whole-house plumbing inspection typically takes between 60 and 90 minutes depending on the property size.' },
+      { question: 'What is included in a whole-home plumbing inspection report?', answer: 'Our inspection covers water supply pressure, water heater condition, fixture operation, exposed piping integrity, emergency shutoff valves, drainage flow, and sewer camera video findings.' }
+    ],
+    related: ['sewer-camera-inspection', 'leak-detection', 'residential-plumbing', 'water-heater-services', 'pipe-repair'],
+    isEmergencyCapable: false
   }
 ];
+

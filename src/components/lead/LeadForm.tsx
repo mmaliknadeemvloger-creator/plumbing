@@ -6,23 +6,30 @@ import { PhoneIcon, CheckIcon, AlertTriangleIcon } from '@/components/icons';
 import { PHONE, PHONE_E164, SERVICE_AREA_LABEL } from '@/content/site';
 
 const ALL_SERVICES = [
-  { value: 'drain-cleaning', label: 'Drain Cleaning' },
+  { value: 'residential-plumbing', label: 'Residential Plumbing' },
+  { value: 'commercial-plumbing', label: 'Commercial Plumbing' },
+  { value: 'emergency-plumbing', label: 'Emergency Plumbing (24/7)' },
+  { value: 'drain-cleaning', label: 'Drain Cleaning & Clog Removal' },
   { value: 'hydro-jetting', label: 'Hydro Jetting' },
   { value: 'slow-drain-repair', label: 'Slow Drain Repair' },
   { value: 'sewer-line-repair', label: 'Sewer Line Repair' },
   { value: 'sewer-camera-inspection', label: 'Sewer Camera Inspection' },
   { value: 'sewer-line-replacement', label: 'Sewer Line Replacement' },
+  { value: 'water-heater-services', label: 'Water Heater Services' },
   { value: 'water-heater-repair', label: 'Water Heater Repair' },
   { value: 'water-heater-installation', label: 'Water Heater Installation' },
   { value: 'tankless-water-heater', label: 'Tankless Water Heater' },
-  { value: 'leak-detection', label: 'Leak Detection' },
+  { value: 'leak-detection', label: 'Leak Detection & Repair' },
   { value: 'slab-leak-repair', label: 'Slab Leak Repair' },
-  { value: 'pipe-repair', label: 'Pipe Repair' },
+  { value: 'pipe-repair', label: 'Pipe Repair & Burst Lines' },
   { value: 'water-line-repair', label: 'Water Line Repair' },
   { value: 'repiping', label: 'Whole-House Repiping' },
+  { value: 'toilet-faucet-repair', label: 'Toilet & Faucet Repair' },
   { value: 'faucet-repair', label: 'Faucet Repair & Installation' },
   { value: 'toilet-repair', label: 'Toilet Repair & Installation' },
   { value: 'shower-repair', label: 'Shower & Tub Repair' },
+  { value: 'plumbing-installation', label: 'Plumbing Installation' },
+  { value: 'plumbing-inspection', label: 'Plumbing Inspection' },
   { value: 'gas-line-repair', label: 'Gas Line Repair' },
   { value: 'gas-line-installation', label: 'Gas Line Installation' },
   { value: 'garbage-disposal', label: 'Garbage Disposal' },
@@ -33,13 +40,6 @@ const ALL_SERVICES = [
   { value: 'other', label: 'Other / Not Sure' },
 ];
 
-const COVERED_ZIPS = new Set([
-  '28201','28202','28203','28204','28205','28206','28207','28208','28209',
-  '28210','28211','28212','28213','28214','28215','28216','28217','28226',
-  '28227','28269','28270','28277','28278','28031','28036','28070','28078',
-  '28104','28105','28115','28117','28120','28134','28012','28052','28054',
-  '28056','28079','28173','29707','29708','29710','29715','29730','29732',
-]);
 
 interface FormData {
   service: string;
@@ -164,7 +164,7 @@ export function LeadForm({
     }
   }
 
-  const isCovered = form.zip.length === 5 ? COVERED_ZIPS.has(form.zip) : null;
+  const isCovered = form.zip.length === 5 ? /^\d{5}$/.test(form.zip) : null;
 
   // Emergency short-path
   if (emergencyPath) {
@@ -304,22 +304,23 @@ export function LeadForm({
                 value={form.zip}
                 onChange={set('zip')}
                 maxLength={5}
-                placeholder="e.g. 28202"
+                placeholder="e.g. 90210"
                 aria-invalid={!!errors.zip}
                 aria-describedby={errors.zip ? 'lf-zip-err' : isCovered !== null ? 'lf-zip-status' : undefined}
               />
               {errors.zip && <p id="lf-zip-err" className="text-xs text-alert mt-1">{errors.zip}</p>}
               {!errors.zip && isCovered === true && (
                 <p id="lf-zip-status" className="text-xs text-sage font-medium mt-1 flex items-center gap-1">
-                  <CheckIcon className="w-3.5 h-3.5" /> We serve your area!
+                  <CheckIcon className="w-3.5 h-3.5" /> Local plumbers available in this area!
                 </p>
               )}
               {!errors.zip && isCovered === false && (
                 <p id="lf-zip-status" className="text-xs text-ink/60 mt-1">
-                  That ZIP may be outside our primary service area. Submit anyway and we'll let you know.
+                  Please enter a valid 5-digit US ZIP code.
                 </p>
               )}
             </div>
+
 
             <div>
               <label htmlFor="lf-timing" className="field-label">When do you need service?</label>

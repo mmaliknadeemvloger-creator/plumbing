@@ -1,19 +1,20 @@
 export const nav = {
   services: [
     { title: 'Emergency Plumbing', href: '/emergency-plumbing/' },
+    { title: 'Residential Plumbing', href: '/plumbing-services/residential-plumbing/' },
+    { title: 'Commercial Plumbing', href: '/plumbing-services/commercial-plumbing/' },
     { title: 'Drain Cleaning', href: '/plumbing-services/drain-cleaning/' },
-    { title: 'Water Heater Repair', href: '/plumbing-services/water-heater-repair/' },
     { title: 'Sewer Line Repair', href: '/plumbing-services/sewer-line-repair/' },
-    { title: 'Leak Detection', href: '/plumbing-services/leak-detection/' },
-    { title: 'Slab Leak Repair', href: '/plumbing-services/slab-leak-repair/' },
+    { title: 'Water Heater Services', href: '/plumbing-services/water-heater-services/' },
+    { title: 'Leak Detection & Repair', href: '/plumbing-services/leak-repair/' },
     { title: 'Pipe Repair', href: '/plumbing-services/pipe-repair/' },
-    { title: 'Water Line Repair', href: '/plumbing-services/water-line-repair/' },
+    { title: 'Toilet & Faucet Repair', href: '/plumbing-services/toilet-faucet-repair/' },
+    { title: 'Plumbing Installation', href: '/plumbing-services/plumbing-installation/' },
+    { title: 'Plumbing Inspection', href: '/plumbing-services/plumbing-inspection/' },
     { title: 'Whole-House Repiping', href: '/plumbing-services/repiping/' },
-    { title: 'Toilet Repair', href: '/plumbing-services/toilet-repair/' },
-    { title: 'Faucet Repair', href: '/plumbing-services/faucet-repair/' },
-    { title: 'Water Softener', href: '/plumbing-services/water-softener/' },
-    { title: 'All Services', href: '/plumbing-services/' },
+    { title: 'All Plumbing Services', href: '/plumbing-services/' },
   ],
+
   locations: [
     {
       region: 'Central Charlotte',

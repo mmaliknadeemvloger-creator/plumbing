@@ -12,9 +12,10 @@ export const Footer = () => {
           
           <div>
             <Logo variant="dark" className="mb-6" />
-            <p className="mb-6 text-sm">Professional plumbing and drain services for Charlotte Metro and York County. Fast, reliable, and honest.</p>
+            <p className="mb-6 text-sm">Professional residential and commercial plumbing and drain clearing services across the USA. Fast, reliable, and upfront pricing.</p>
             <PhoneLink variant="hero" />
           </div>
+
 
           <div>
             <h4 className="font-bold text-white mb-4 uppercase tracking-wider text-sm">Services</h4>

@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next';
 import { SITE_URL } from '@/content/site';
 
 export default function robots(): MetadataRoute.Robots {
-  const isProd = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production' || process.env.NODE_ENV === 'production';
+  const isBlocked = process.env.DISALLOW_ROBOTS === 'true' || process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview';
 
-  if (!isProd) {
+  if (isBlocked) {
     return {
       rules: {
         userAgent: '*',
@@ -27,3 +27,4 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
+

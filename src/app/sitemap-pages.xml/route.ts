@@ -1,13 +1,15 @@
 import { SITE_URL } from '@/content/site';
 import { 
   homePage, serviceHub, emergencyHub, locationHub, 
-  resourceHub, aboutPage, contactPage, faqPage 
+  resourceHub, aboutPage, contactPage, faqPage,
+  requestServicePage, privacyPage, termsPage, accessibilityPage
 } from '@/lib/routes';
 import { contentDates } from '@/content/dates';
 
 export async function GET() {
   const pages = [
     { url: homePage(), priority: 1.0 },
+    { url: requestServicePage(), priority: 0.95 },
     { url: serviceHub(), priority: 0.9 },
     { url: emergencyHub(), priority: 0.9 },
     { url: locationHub(), priority: 0.9 },
@@ -15,7 +17,11 @@ export async function GET() {
     { url: aboutPage(), priority: 0.7 },
     { url: contactPage(), priority: 0.7 },
     { url: faqPage(), priority: 0.7 },
+    { url: privacyPage(), priority: 0.5 },
+    { url: termsPage(), priority: 0.5 },
+    { url: accessibilityPage(), priority: 0.5 },
   ];
+
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

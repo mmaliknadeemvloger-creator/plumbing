@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { BRAND, SITE_URL } from '@/content/site';
+import { BRAND, BRAND_SHORT, SITE_URL } from '@/content/site';
 
 export interface PageMetaProps {
   title: string;
@@ -16,15 +16,23 @@ export function pageMeta({
   robots = 'index, follow',
   ogKey = 'home',
 }: PageMetaProps): Metadata {
-  const fullTitle = `${title} | ${BRAND}`;
-  // Drop brand if total length > 62 chars
-  const finalTitle = fullTitle.length > 62 ? title : fullTitle;
+  // If title already has brand or separator, use as is; otherwise add brand if within SEO limits
+  const hasBrand = title.includes(BRAND_SHORT) || title.includes(BRAND);
+  const finalTitle = hasBrand
+    ? title
+    : `${title} | ${BRAND_SHORT}`.length <= 65
+      ? `${title} | ${BRAND_SHORT}`
+      : title;
   
   // Truncate description to 160 chars max if necessary
   const finalDesc = description.length > 160 ? description.substring(0, 157) + '...' : description;
   
-  const url = `${SITE_URL}${path}`;
-  const ogImageUrl = `/og/${ogKey}.png`;
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  const url = `${SITE_URL}${cleanPath}`;
+  const ogImageUrl = `${SITE_URL}/og/${ogKey}.png`;
+
+  const isNoIndex = robots.includes('noindex');
+  const isNoFollow = robots.includes('nofollow');
 
   return {
     title: finalTitle,
@@ -32,12 +40,23 @@ export function pageMeta({
     alternates: {
       canonical: url,
     },
-    robots: robots,
+    robots: {
+      index: !isNoIndex,
+      follow: !isNoFollow,
+      nocache: false,
+      googleBot: {
+        index: !isNoIndex,
+        follow: !isNoFollow,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
       title: finalTitle,
       description: finalDesc,
       url: url,
-      siteName: BRAND,
+      siteName: BRAND_SHORT,
       images: [
         {
           url: ogImageUrl,
@@ -57,3 +76,4 @@ export function pageMeta({
     },
   };
 }
+

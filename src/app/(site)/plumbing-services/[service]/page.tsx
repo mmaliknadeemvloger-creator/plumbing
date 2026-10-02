@@ -4,6 +4,8 @@ import { servicesMore } from '@/content/servicesMore';
 import { pageMeta } from '@/lib/seo';
 import { servicePage } from '@/lib/routes';
 import { ServiceTemplate } from '@/components/templates/ServiceTemplate';
+import { JsonLd } from '@/components/JsonLd';
+import { serviceGraph } from '@/lib/schema';
 
 export const dynamicParams = false;
 
@@ -38,5 +40,27 @@ export default async function ServicePage({
   const { service } = await params;
   const s = allServices.find(x => x.slug === service);
   if (!s || s.status !== 'PUBLISHED') notFound();
-  return <ServiceTemplate service={s!} />;
+
+  const breadcrumbs = [
+    { name: 'Home', item: '/' },
+    { name: 'Plumbing Services', item: '/plumbing-services/' },
+    { name: s.name, item: servicePage(s.slug) },
+  ];
+
+  return (
+    <>
+      <JsonLd
+        data={serviceGraph({
+          name: s.name,
+          description: s.metaDescription,
+          path: servicePage(s.slug),
+          category: s.category,
+          faqs: s.faqs,
+          breadcrumbs: breadcrumbs,
+        })}
+      />
+      <ServiceTemplate service={s!} />
+    </>
+  );
 }
+

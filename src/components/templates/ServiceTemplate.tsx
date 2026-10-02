@@ -60,12 +60,13 @@ export function ServiceTemplate({ service, localAngle, localFaqs }: ServiceTempl
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden ring-4 ring-white/10 shadow-2xl">
                 <Image
                   src={photoUrl}
-                  alt={`${service.name} professional service in Charlotte`}
+                  alt={`${service.name} professional plumbing repair and installation service`}
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
               </div>
             </div>

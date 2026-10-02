@@ -7,8 +7,8 @@ import { CtaBand } from '@/components/CtaBand';
 import { ZipChecker } from '@/components/ZipChecker';
 
 export const metadata = pageMeta({
-  title: 'Plumbing Service Area | Charlotte Metro',
-  description: 'Elite Plumbing & Drain serves the entire Charlotte Metro area and York County, SC. Find out if we offer expert plumbing services in your neighborhood.',
+  title: 'Plumbing Service Areas & Local Regions | Elite Plumbing',
+  description: 'Explore Elite Plumbing active local service areas and regional hubs across the United States. Connect with licensed local plumbing contractors for fast, code-compliant service.',
   path: locationHub(),
 });
 
@@ -20,12 +20,12 @@ export default function LocationsHubPage() {
       <section className="bg-ink pt-20 pb-24 text-white">
         <div className="container-x">
           <div className="max-w-3xl mb-12">
-            <span className="eyebrow text-sky mb-4 block">Our Service Area</span>
+            <span className="eyebrow text-sky mb-4 block uppercase tracking-wider font-semibold text-xs">Regional Service Hubs</span>
             <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-              Charlotte Metro & York County
+              Plumbing Service Areas & Locations
             </h1>
             <p className="text-xl text-white/80">
-              We proudly provide high-quality plumbing repairs, installations, and maintenance to homeowners across the Carolinas. Find your city below or check your ZIP code to get started.
+              We connect homeowners and commercial properties across the USA with verified local plumbing contractors. Browse our active regional hubs below or enter your ZIP code for immediate dispatch.
             </p>
           </div>
           
@@ -34,6 +34,7 @@ export default function LocationsHubPage() {
           </div>
         </div>
       </section>
+
 
       <section className="py-20 bg-paper">
         <div className="container-x">

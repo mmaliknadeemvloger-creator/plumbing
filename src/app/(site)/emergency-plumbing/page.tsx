@@ -10,8 +10,8 @@ import { FaqList } from '@/components/FaqList';
 import { SectionHeading } from '@/components/ui';
 
 export const metadata = pageMeta({
-  title: 'Emergency Plumber Charlotte, NC | Elite Plumbing',
-  description: '24/7 Emergency plumbing services in the Charlotte Metro area. Burst pipes, overflowing toilets, and severe leaks fixed fast.',
+  title: '24/7 Emergency Plumbing Services Across the USA | Elite Plumbing',
+  description: 'Need an emergency plumber? 24/7 emergency plumbing services across the USA for burst pipes, active water leaks, severe drain backups, and gas leaks. Fast dispatch.',
   path: emergencyHub(),
 });
 
@@ -21,15 +21,15 @@ export default function EmergencyPlumbingPage() {
   const faqs = [
     {
       question: 'What is considered a plumbing emergency?',
-      answer: 'Any plumbing issue that risks severe water damage to your property or poses a health hazard is an emergency. This includes burst pipes, overflowing toilets, active main line leaks, and severe sewer backups.'
+      answer: 'Any plumbing issue that risks severe water damage to your property or poses a health or safety hazard is an emergency. This includes burst pipes, overflowing toilets, active supply line leaks, failed water heaters, and severe sewer backups.'
     },
     {
-      question: 'How fast can you get here?',
-      answer: 'We prioritize emergency calls and strive for the fastest possible response times across the Charlotte metro area. When you call, our dispatch will give you an immediate ETA based on current availability and your location.'
+      question: 'How fast can an emergency plumber arrive?',
+      answer: 'We prioritize emergency calls and connect you with available licensed plumbers for the fastest possible dispatch in your local area across the United States. When you call, our team immediately assesses technician availability.'
     },
     {
-      question: 'What should I do while waiting for the plumber?',
-      answer: 'Your first priority should be to shut off the main water valve to your home to stop the flooding. Next, if water is near electrical outlets or appliances, turn off the electricity to that area at your breaker panel.'
+      question: 'What should I do while waiting for the emergency plumber?',
+      answer: 'Your first priority should be to shut off the main water shutoff valve to stop the flooding. Next, if water is near electrical outlets or appliances, turn off the electricity to that area at your main breaker panel.'
     }
   ];
 
@@ -37,13 +37,14 @@ export default function EmergencyPlumbingPage() {
     <>
       <section className="bg-alert pt-20 pb-24 text-white">
         <div className="container-x text-center max-w-4xl mx-auto">
-          <span className="eyebrow text-white/90 mb-4 block">24/7 Emergency Service</span>
+          <span className="eyebrow text-white/90 mb-4 block uppercase tracking-wider font-semibold text-xs">24/7 Nationwide Emergency Dispatch</span>
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-            Emergency Plumber in Charlotte Metro
+            24/7 Emergency Plumbing Services Across the USA
           </h1>
           <p className="text-xl text-white/90 mb-10">
-            Water damage spreads fast. If you have a burst pipe, active leak, or major backup, don't wait. Call us right now for immediate assistance.
+            Water damage spreads fast. If you have a burst pipe, active leak, or major sewer backup, call right now for immediate emergency dispatch.
           </p>
+
           <div className="bg-white/10 p-8 rounded-3xl backdrop-blur-sm border border-white/20 inline-block">
             <p className="text-sm font-bold uppercase tracking-wider text-white/80 mb-2">Call For Immediate Dispatch</p>
             <PhoneLink className="text-4xl md:text-5xl font-bold text-white hover:text-white/90 transition-colors" />

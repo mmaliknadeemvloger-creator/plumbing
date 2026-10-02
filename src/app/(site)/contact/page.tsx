@@ -4,8 +4,8 @@ import { LeadFormBlock } from '@/components/lead/LeadFormBlock';
 import { BRAND } from '@/content/site';
 
 export const metadata = pageMeta({
-  title: 'Contact Elite Plumbing & Drain',
-  description: 'Get in touch with Elite Plumbing & Drain for service in the Charlotte area.',
+  title: 'Contact Elite Plumbing | Nationwide Plumbing Service & Dispatch',
+  description: 'Contact Elite Plumbing for fast residential and commercial plumbing services across the USA. Request a free quote online or call for immediate dispatch.',
   path: '/contact/',
 });
 
@@ -14,11 +14,13 @@ export default function ContactPage() {
     <div>
       <section className="bg-ink text-white py-16 text-center">
         <div className="container-x max-w-3xl">
+          <span className="eyebrow text-sky mb-2 block uppercase tracking-wider font-semibold text-xs">Get In Touch</span>
           <h1 className="text-4xl md:text-5xl font-heading font-bold mb-4">Contact {BRAND}</h1>
-          <p className="text-lg opacity-90 mb-8">We are ready to help with your plumbing needs.</p>
+          <p className="text-lg opacity-90 mb-8">We are ready to connect you with trusted, licensed plumbers across the United States.</p>
           <PhoneLink className="btn btn-primary text-xl px-8 py-4" />
         </div>
       </section>
+
 
       <section className="py-16">
         <div className="container-x max-w-2xl">

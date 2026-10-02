@@ -17,10 +17,20 @@ export const contentDates: Record<string, string> = {
   'chemical-drain-cleaners': '2025-02-08T10:00:00Z',
   'sewer-smell-causes': '2025-01-22T10:00:00Z',
 
+  // Services
+  'residential-plumbing': '2025-02-15T10:00:00Z',
+  'commercial-plumbing': '2025-02-15T10:00:00Z',
+  'water-heater-services': '2025-02-15T10:00:00Z',
+  'leak-repair': '2025-02-15T10:00:00Z',
+  'toilet-faucet-repair': '2025-02-15T10:00:00Z',
+  'plumbing-installation': '2025-02-15T10:00:00Z',
+  'plumbing-inspection': '2025-02-15T10:00:00Z',
+  'drain-cleaning': '2025-02-15T10:00:00Z',
+  'sewer-line-repair': '2025-02-15T10:00:00Z',
+  'pipe-repair': '2025-02-15T10:00:00Z',
+
   // Other dynamic pages can be listed here if needed for sitemap
   'emergency-plumber': '2025-02-01T10:00:00Z',
-  'drain-cleaning-charlotte': '2025-02-01T10:00:00Z',
-  'water-heater-repair-charlotte': '2025-02-01T10:00:00Z',
   'plumber-near-me': '2025-02-01T10:00:00Z',
-  'sewer-repair-charlotte': '2025-02-01T10:00:00Z'
 };
+

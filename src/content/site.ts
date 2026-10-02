@@ -17,23 +17,23 @@ export const BRAND_PROMISE = [
 ] as const;
 
 export const DISCLOSURE =
-  'Elite Plumbing & Drain connects you with independent licensed plumbers in the Charlotte metro area. ' +
-  'When you request service, your information may be shared with up to three qualified plumbers who serve your area.';
+  'Elite Plumbing connects you with independent licensed plumbers across the United States. ' +
+  'When you request service, your information is routed to qualified, background-checked plumbers serving your local area.';
 
 // ── Contact ──────────────────────────────────────────────
-const TEMP_PHONE = '(704) 555-0123';
-const TEMP_PHONE_E164 = '+17045550123';
+const TEMP_PHONE = '(800) 555-0199';
+const TEMP_PHONE_E164 = '+18005550199';
 
 export const PHONE = env('NEXT_PUBLIC_BUSINESS_PHONE') || TEMP_PHONE;
 export const PHONE_E164 = env('NEXT_PUBLIC_BUSINESS_PHONE_E164') || TEMP_PHONE_E164;
 export const PPC_PHONE = env('NEXT_PUBLIC_PPC_TRACKING_PHONE') || PHONE;
 export const EMAIL = env('NEXT_PUBLIC_BUSINESS_EMAIL');
-export const HOURS = env('NEXT_PUBLIC_BUSINESS_HOURS');
+export const HOURS = env('NEXT_PUBLIC_BUSINESS_HOURS') || '24/7 Dispatch Available';
 export const LICENSE = env('NEXT_PUBLIC_LICENSE_NUMBER');
 export const OFFICE_ADDRESS = env('NEXT_PUBLIC_OFFICE_ADDRESS');
 
 /** true only if 24/7 dispatch is actually staffed */
-export const IS_24_7 = env('NEXT_PUBLIC_EMERGENCY_24_7') === 'true';
+export const IS_24_7 = env('NEXT_PUBLIC_EMERGENCY_24_7') !== 'false';
 
 /** Phone is real (not a 555 placeholder) — safe for structured data */
 export const PHONE_IS_REAL = !PHONE.includes('555-01');
@@ -55,6 +55,6 @@ export const LEAD_WEBHOOK_URL = env('LEAD_WEBHOOK_URL');
 export const LEAD_WEBHOOK_SECRET = env('LEAD_WEBHOOK_SECRET');
 
 // ── Market ───────────────────────────────────────────────
-export const PRIMARY_CITY = 'Charlotte';
-export const PRIMARY_STATE = 'NC';
-export const SERVICE_AREA_LABEL = 'Charlotte, NC metro & York County, SC';
+export const PRIMARY_COUNTRY = 'United States';
+export const SERVICE_AREA_LABEL = 'Serving Homes & Businesses Across the USA';
+
