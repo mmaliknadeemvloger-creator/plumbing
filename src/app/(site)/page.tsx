@@ -11,7 +11,6 @@ import { PhoneLink } from '@/components/PhoneLink';
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
 import { ZipChecker } from '@/components/ZipChecker';
 import { FaqList } from '@/components/FaqList';
-import { Reviews } from '@/components/Reviews';
 import { CtaBand } from '@/components/CtaBand';
 import { JsonLd } from '@/components/JsonLd';
 import { pageGraph } from '@/lib/schema';
@@ -368,13 +367,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reviews */}
-      <section className="py-16 bg-paper">
-        <div className="container-x">
-          <h2 className="text-3xl font-heading font-bold text-center mb-10 text-ink">What Our Customers Say</h2>
-          <Reviews reviews={[]} />
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-16 bg-white">
