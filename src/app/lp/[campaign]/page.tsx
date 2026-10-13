@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ campaign:
     description: lp.bullets.join('. '),
     path: `/lp/${campaign}/`,
     robots: 'noindex, nofollow',
+    keywords: lp.keywords.map(k => k.kw),
   });
   
   meta.alternates = {

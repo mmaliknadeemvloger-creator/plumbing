@@ -13,6 +13,19 @@ export const metadata = pageMeta({
   title: '24/7 Emergency Plumbing Services Across the USA | Elite Plumbing',
   description: 'Need an emergency plumber? 24/7 emergency plumbing services across the USA for burst pipes, active water leaks, severe drain backups, and gas leaks. Fast dispatch.',
   path: emergencyHub(),
+  keywords: [
+    'emergency plumber',
+    '24 hour emergency plumbing',
+    'urgent plumbing repair',
+    'burst pipe repair',
+    'overflowing toilet emergency',
+    'emergency drain cleaning',
+    'water heater leaking',
+    'sewer backup emergency',
+    'after hours plumber',
+    'immediate plumbing dispatch',
+    'emergency plumber near me',
+  ],
 });
 
 export default function EmergencyPlumbingPage() {

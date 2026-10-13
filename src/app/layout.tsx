@@ -4,7 +4,7 @@ import './globals.css';
 import { Tracking } from '@/components/Tracking';
 import { JsonLd } from '@/components/JsonLd';
 import { siteGraph } from '@/lib/schema';
-import { BRAND, BRAND_FULL, SITE_URL } from '@/content/site';
+import { BRAND, BRAND_FULL, SITE_URL, DEFAULT_KEYWORDS } from '@/content/site';
 
 const inter = Inter_Tight({
   subsets: ['latin'],
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     template: `%s | ${BRAND}`,
     default: BRAND_FULL,
   },
+  keywords: [...DEFAULT_KEYWORDS],
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',

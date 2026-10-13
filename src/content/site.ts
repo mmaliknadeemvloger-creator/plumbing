@@ -58,3 +58,24 @@ export const LEAD_WEBHOOK_SECRET = env('LEAD_WEBHOOK_SECRET');
 export const PRIMARY_COUNTRY = 'United States';
 export const SERVICE_AREA_LABEL = 'Serving Homes & Businesses Across the USA';
 
+// ── Default SEO Keywords ─────────────────────────────────
+export const DEFAULT_KEYWORDS = [
+  'plumbing services',
+  'licensed plumber',
+  'emergency plumber',
+  '24 hour plumber',
+  'drain cleaning',
+  'water heater repair',
+  'water heater installation',
+  'leak detection',
+  'slab leak repair',
+  'sewer line repair',
+  'pipe repair',
+  'toilet repair',
+  'faucet replacement',
+  'residential plumbing',
+  'commercial plumbing',
+  'local plumbers near me',
+] as const;
+
+

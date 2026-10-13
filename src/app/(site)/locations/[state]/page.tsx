@@ -24,6 +24,15 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `Plumbing Services in ${state.name}`,
     description: `Expert plumbing services across ${state.name}. Find your city to see local plumbing information, service areas, and fast response times.`,
     path: statePage(state.slug),
+    keywords: [
+      `plumbing services in ${state.name}`,
+      `plumber in ${state.name}`,
+      `${state.name} emergency plumber`,
+      `licensed plumbers in ${state.abbreviation}`,
+      `${state.name} drain cleaning`,
+      `${state.name} water heater repair`,
+      `local plumbers in ${state.name}`,
+    ],
   });
 }
 

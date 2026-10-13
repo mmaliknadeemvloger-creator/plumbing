@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { BRAND, BRAND_SHORT, SITE_URL } from '@/content/site';
+import { BRAND, BRAND_SHORT, SITE_URL, DEFAULT_KEYWORDS } from '@/content/site';
 
 export interface PageMetaProps {
   title: string;
@@ -7,6 +7,7 @@ export interface PageMetaProps {
   path: string;
   robots?: string;
   ogKey?: string;
+  keywords?: string | readonly string[] | string[];
 }
 
 export function pageMeta({
@@ -15,6 +16,7 @@ export function pageMeta({
   path,
   robots = 'index, follow',
   ogKey = 'home',
+  keywords,
 }: PageMetaProps): Metadata {
   // If title already has brand or separator, use as is; otherwise add brand if within SEO limits
   const hasBrand = title.includes(BRAND_SHORT) || title.includes(BRAND);
@@ -34,9 +36,16 @@ export function pageMeta({
   const isNoIndex = robots.includes('noindex');
   const isNoFollow = robots.includes('nofollow');
 
+  const finalKeywords: string[] = keywords
+    ? typeof keywords === 'string'
+      ? keywords.split(',').map((k: string) => k.trim())
+      : Array.from(keywords)
+    : [...DEFAULT_KEYWORDS];
+
   return {
     title: finalTitle,
     description: finalDesc,
+    keywords: finalKeywords,
     alternates: {
       canonical: url,
     },

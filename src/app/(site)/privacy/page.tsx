@@ -4,6 +4,12 @@ export const metadata = pageMeta({
   title: 'Privacy Policy',
   description: 'Privacy Policy — Elite Plumbing & Drain, serving Charlotte, NC metro and York County, SC.',
   path: '/privacy/',
+  keywords: [
+    'privacy policy',
+    'elite plumbing privacy policy',
+    'data protection',
+    'user privacy',
+  ],
 });
 
 export default function PrivacyPage() {

@@ -32,6 +32,14 @@ export async function generateMetadata({ params }: { params: Promise<{ guide: st
     title: article.seoTitle,
     description: article.metaDescription,
     path: guidePage(article.slug),
+    keywords: [
+      article.title.toLowerCase(),
+      `${article.category.toLowerCase()} guide`,
+      'plumbing repair tips',
+      'DIY plumbing advice',
+      'plumbing troubleshooting',
+      'homeowner plumbing guide',
+    ],
   });
 }
 

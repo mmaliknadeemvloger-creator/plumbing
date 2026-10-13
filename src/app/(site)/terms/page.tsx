@@ -4,6 +4,12 @@ export const metadata = pageMeta({
   title: 'Terms of Service',
   description: 'Terms of Service — Elite Plumbing & Drain, serving Charlotte, NC metro and York County, SC.',
   path: '/terms/',
+  keywords: [
+    'terms of service',
+    'terms and conditions',
+    'elite plumbing terms',
+    'service agreement',
+  ],
 });
 
 export default function TermsPage() {

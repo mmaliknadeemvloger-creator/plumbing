@@ -8,6 +8,14 @@ export const metadata = pageMeta({
   title: 'About Elite Plumbing | Nationwide Plumbing Network',
   description: 'Learn how Elite Plumbing connects homeowners and businesses across the USA with licensed, pre-screened plumbing contractors for fast, reliable service.',
   path: '/about/',
+  keywords: [
+    'about elite plumbing',
+    'licensed plumbing network',
+    'nationwide plumbers',
+    'pre-screened plumbers',
+    'vetted plumbing contractors',
+    'reliable plumbing company',
+  ],
 });
 
 export default function AboutPage() {

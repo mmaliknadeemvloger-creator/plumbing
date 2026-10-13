@@ -10,6 +10,15 @@ export const metadata = pageMeta({
   title: 'Plumbing Service Areas & Local Regions | Elite Plumbing',
   description: 'Explore Elite Plumbing active local service areas and regional hubs across the United States. Connect with licensed local plumbing contractors for fast, code-compliant service.',
   path: locationHub(),
+  keywords: [
+    'plumbing service areas',
+    'local plumbers',
+    'find a plumber near me',
+    'licensed plumbers USA',
+    'emergency plumber locations',
+    'residential plumbing areas',
+    'local plumbing company',
+  ],
 });
 
 export default function LocationsHubPage() {

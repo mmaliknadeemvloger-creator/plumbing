@@ -11,6 +11,14 @@ export const metadata = pageMeta({
   title: 'Frequently Asked Plumbing Questions | Elite Plumbing',
   description: 'Find answers to common plumbing questions about emergency repairs, drain cleaning, water heaters, leak detection, and pricing across the USA.',
   path: '/faq/',
+  keywords: [
+    'plumbing faq',
+    'common plumbing questions',
+    'plumbing repair costs',
+    'emergency plumbing questions',
+    'how to hire a plumber',
+    'plumbing help and answers',
+  ],
 });
 
 export default function FaqPage() {

@@ -43,6 +43,14 @@ export async function generateMetadata({
     title: `${service.name} in ${city.name}, ${state.abbreviation}`,
     description: `${service.name} in ${city.name}. ${service.metaDescription}`,
     path: cityServicePage(stateSlug, citySlug, serviceSlug),
+    keywords: [
+      `${service.name.toLowerCase()} in ${city.name} ${state.abbreviation}`,
+      `${city.name} ${service.name.toLowerCase()}`,
+      `emergency ${service.name.toLowerCase()} ${city.name}`,
+      `${service.name.toLowerCase()} company ${city.name}`,
+      `licensed plumber ${city.name}`,
+      `best ${service.name.toLowerCase()} ${city.name} ${state.abbreviation}`,
+    ],
   });
 }
 

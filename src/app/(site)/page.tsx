@@ -22,6 +22,22 @@ export const metadata = pageMeta({
   title: 'Professional Plumbing Services Across the USA | Elite Plumbing',
   description: 'Elite Plumbing delivers trusted plumbing services across the USA. Connect with licensed plumbers for 24/7 emergency repairs, drain cleaning, leak repair, water heaters, and residential & commercial plumbing nationwide.',
   path: '/',
+  keywords: [
+    'plumbing services',
+    'licensed plumbers',
+    'emergency plumber',
+    '24/7 plumbing repair',
+    'drain cleaning service',
+    'water heater repair',
+    'water heater installation',
+    'leak detection',
+    'sewer line repair',
+    'pipe repair contractors',
+    'commercial plumbing',
+    'residential plumbing',
+    'find local plumber',
+    'trusted plumbing contractors',
+  ],
 });
 
 export default function HomePage() {
@@ -63,6 +79,15 @@ export default function HomePage() {
           name: 'Professional Plumbing Services Across the USA | Elite Plumbing',
           description: 'Trusted residential and commercial plumbing services across the USA. Connect with licensed plumbers nationwide for fast dispatch, upfront pricing, and guaranteed repairs.',
           faqs: nationwideFaqs,
+          keywords: [
+            'plumbing services',
+            'licensed plumbers',
+            'emergency plumber',
+            'drain cleaning',
+            'water heater repair',
+            'leak detection',
+            'pipe repair',
+          ],
         })}
       />
 

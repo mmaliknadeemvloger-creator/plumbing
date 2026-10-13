@@ -12,6 +12,20 @@ export const metadata = pageMeta({
   title: 'Plumbing Services Across the USA | Elite Plumbing',
   description: 'Explore our complete list of residential and commercial plumbing services across the USA. Fast drain cleaning, water heater repair, leak detection, repiping, and 24/7 emergency dispatch.',
   path: '/plumbing-services/',
+  keywords: [
+    'plumbing services',
+    'drain cleaning',
+    'water heater installation',
+    'water heater repair',
+    'leak detection service',
+    'pipe repair',
+    'sewer line replacement',
+    'hydro jetting',
+    'slab leak repair',
+    'faucet and toilet repair',
+    'commercial plumbing services',
+    'residential plumbing services',
+  ],
 });
 
 function getServicePhoto(categorySlug: string): string {

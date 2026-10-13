@@ -25,10 +25,25 @@ export async function generateMetadata({
   const { service } = await params;
   const s = allServices.find(x => x.slug === service);
   if (!s || s.status !== 'PUBLISHED') return {};
+
+  const serviceKeywords = [
+    s.name.toLowerCase(),
+    `${s.name.toLowerCase()} services`,
+    `${s.name.toLowerCase()} repair`,
+    `${s.name.toLowerCase()} installation`,
+    `${s.name.toLowerCase()} contractor`,
+    `${s.name.toLowerCase()} cost`,
+    'licensed plumber',
+    'emergency plumbing',
+    'residential plumbing',
+    'commercial plumbing',
+  ];
+
   return pageMeta({
     title: s.seoTitle,
     description: s.metaDescription,
     path: servicePage(s.slug),
+    keywords: serviceKeywords,
   });
 }
 
@@ -40,6 +55,14 @@ export default async function ServicePage({
   const { service } = await params;
   const s = allServices.find(x => x.slug === service);
   if (!s || s.status !== 'PUBLISHED') notFound();
+
+  const serviceKeywords = [
+    s.name.toLowerCase(),
+    `${s.name.toLowerCase()} services`,
+    `${s.name.toLowerCase()} repair`,
+    `${s.name.toLowerCase()} contractor`,
+    'licensed plumber',
+  ];
 
   const breadcrumbs = [
     { name: 'Home', item: '/' },
@@ -57,6 +80,7 @@ export default async function ServicePage({
           category: s.category,
           faqs: s.faqs,
           breadcrumbs: breadcrumbs,
+          keywords: serviceKeywords,
         })}
       />
       <ServiceTemplate service={s!} />

@@ -7,6 +7,14 @@ export const metadata = pageMeta({
   title: 'Contact Elite Plumbing | Nationwide Plumbing Service & Dispatch',
   description: 'Contact Elite Plumbing for fast residential and commercial plumbing services across the USA. Request a free quote online or call for immediate dispatch.',
   path: '/contact/',
+  keywords: [
+    'contact plumber',
+    'plumbing phone number',
+    'schedule plumbing service',
+    'plumbing dispatch',
+    'request a plumbing quote',
+    'emergency plumber contact',
+  ],
 });
 
 export default function ContactPage() {

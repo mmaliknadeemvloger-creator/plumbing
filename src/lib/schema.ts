@@ -13,6 +13,19 @@ export function siteGraph(services?: { slug: string; name: string; url: string }
       '@type': 'Country',
       name: 'United States',
     },
+    knowsAbout: [
+      'Plumbing Repair',
+      'Emergency Plumbing',
+      'Drain Cleaning',
+      'Water Heater Repair',
+      'Water Heater Installation',
+      'Leak Detection',
+      'Pipe Repair',
+      'Sewer Line Repair',
+      'Slab Leak Repair',
+      'Commercial Plumbing',
+      'Residential Plumbing',
+    ],
   };
 
   if (PHONE_IS_REAL) {
@@ -45,9 +58,10 @@ export interface PageGraphProps {
   description: string;
   breadcrumbs?: { name: string; item: string }[];
   faqs?: { question: string; answer: string }[];
+  keywords?: string[] | string;
 }
 
-export function pageGraph({ type, path, name, description, breadcrumbs, faqs }: PageGraphProps) {
+export function pageGraph({ type, path, name, description, breadcrumbs, faqs, keywords }: PageGraphProps) {
   const url = `${SITE_URL}${path}`;
   const webpage: any = {
     '@type': type,
@@ -57,6 +71,10 @@ export function pageGraph({ type, path, name, description, breadcrumbs, faqs }: 
     description: description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
   };
+
+  if (keywords) {
+    webpage.keywords = Array.isArray(keywords) ? keywords.join(', ') : keywords;
+  }
 
   const graph: any[] = [webpage];
 
@@ -101,9 +119,10 @@ export interface ServiceGraphProps {
   category?: string;
   breadcrumbs?: { name: string; item: string }[];
   faqs?: { question: string; answer: string }[];
+  keywords?: string[] | string;
 }
 
-export function serviceGraph({ name, description, path, category, breadcrumbs, faqs }: ServiceGraphProps) {
+export function serviceGraph({ name, description, path, category, breadcrumbs, faqs, keywords }: ServiceGraphProps) {
   const url = `${SITE_URL}${path}`;
   const serviceSchema: any = {
     '@type': 'Service',
@@ -122,6 +141,10 @@ export function serviceGraph({ name, description, path, category, breadcrumbs, f
     serviceSchema.category = category;
   }
 
+  if (keywords) {
+    serviceSchema.keywords = Array.isArray(keywords) ? keywords.join(', ') : keywords;
+  }
+
   const webpage: any = {
     '@type': 'WebPage',
     '@id': `${url}#webpage`,
@@ -131,6 +154,10 @@ export function serviceGraph({ name, description, path, category, breadcrumbs, f
     isPartOf: { '@id': `${SITE_URL}/#website` },
     mainEntity: { '@id': `${url}#service` },
   };
+
+  if (keywords) {
+    webpage.keywords = Array.isArray(keywords) ? keywords.join(', ') : keywords;
+  }
 
   const graph: any[] = [webpage, serviceSchema];
 

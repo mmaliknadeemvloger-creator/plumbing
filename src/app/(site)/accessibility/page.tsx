@@ -4,6 +4,12 @@ export const metadata = pageMeta({
   title: 'Accessibility Statement',
   description: 'Accessibility Statement — Elite Plumbing & Drain, serving Charlotte, NC metro and York County, SC.',
   path: '/accessibility/',
+  keywords: [
+    'accessibility statement',
+    'website accessibility',
+    'WCAG compliance',
+    'ADA compliance',
+  ],
 });
 
 export default function AccessibilityPage() {

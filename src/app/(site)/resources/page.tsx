@@ -10,6 +10,15 @@ export const metadata = pageMeta({
   title: 'Plumbing Guides & Resources | Elite Plumbing',
   description: 'Expert plumbing guides, DIY tips, and answers to common household water and pipe issues. Learn how to maintain your home\'s plumbing.',
   path: resourceHub(),
+  keywords: [
+    'plumbing guides',
+    'plumbing advice',
+    'DIY plumbing tips',
+    'how to fix plumbing problems',
+    'plumbing troubleshooting',
+    'home plumbing maintenance',
+    'plumbing tips and tricks',
+  ],
 });
 
 export default function ResourcesHubPage() {

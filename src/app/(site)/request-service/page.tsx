@@ -8,6 +8,14 @@ export const metadata = pageMeta({
   description: 'Request professional plumbing services online across the USA. Fast dispatch, upfront pricing, and licensed plumbing contractors for residential and commercial repairs.',
   path: '/request-service/',
   robots: 'index, follow',
+  keywords: [
+    'request plumbing service',
+    'plumbing quote online',
+    'hire licensed plumber',
+    'book plumbing repair',
+    'plumber estimate',
+    'schedule local plumber',
+  ],
 });
 
 export default function RequestServicePage() {

@@ -38,6 +38,17 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `Plumbing Services in ${city.name}, ${stateAbbrev} | Elite Plumbing`,
     description: city.intro.substring(0, 155) + '...',
     path: cityPage(stateSlug, citySlug),
+    keywords: [
+      `plumber in ${city.name} ${stateAbbrev}`,
+      `${city.name} plumbing services`,
+      `emergency plumber ${city.name}`,
+      `${city.name} drain cleaning`,
+      `${city.name} water heater repair`,
+      `licensed plumber in ${city.name}`,
+      `best plumber ${city.name} ${stateAbbrev}`,
+      `${city.name} leak detection`,
+      `local plumbers near ${city.name}`,
+    ],
   });
 }
 
