@@ -12,6 +12,7 @@ import { BeforeAfterSlider } from '@/components/BeforeAfterSlider';
 import { ZipChecker } from '@/components/ZipChecker';
 import { FaqList } from '@/components/FaqList';
 import { CtaBand } from '@/components/CtaBand';
+import { PlumbingSolutionsSection } from '@/components/PlumbingSolutionsSection';
 import { JsonLd } from '@/components/JsonLd';
 import { pageGraph } from '@/lib/schema';
 import { requestServicePage, emergencyHub, servicePage, guidePage, locationHub, contactPage } from '@/lib/routes';
@@ -341,6 +342,9 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* Complete Professional Plumbing & Drain Services Guide */}
+      <PlumbingSolutionsSection />
 
       {/* Guides */}
       <section className="py-16 bg-white">

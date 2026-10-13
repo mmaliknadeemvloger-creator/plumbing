@@ -6,6 +6,7 @@ import { services, categories } from '@/content/services';
 import { servicesMore } from '@/content/servicesMore';
 import { servicePage, emergencyHub } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
+import { PlumbingSolutionsSection } from '@/components/PlumbingSolutionsSection';
 
 export const metadata = pageMeta({
   title: 'Plumbing Services Across the USA | Elite Plumbing',
@@ -109,6 +110,8 @@ export default function ServicesHubPage() {
           </div>
         </div>
       </section>
+
+      <PlumbingSolutionsSection />
 
       <CtaBand />
     </>
