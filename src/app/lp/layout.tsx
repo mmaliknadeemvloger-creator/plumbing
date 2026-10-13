@@ -17,10 +17,10 @@ export default function LandingPageLayout({
   return (
     <div className="min-h-screen bg-paper flex flex-col font-body text-ink">
       {/* Top bar */}
-      <header className="bg-white border-b border-line py-4 sticky top-0 z-50 shadow-sm">
-        <div className="container-x flex items-center justify-between">
-          <Logo variant="light" />
-          <a href={`tel:${PPC_PHONE.replace(/\D/g, '')}`} className="btn btn-primary text-lg px-6 py-2">
+      <header className="bg-white border-b border-line py-3 sm:py-4 sticky top-0 z-50 shadow-sm">
+        <div className="container-x flex items-center justify-between gap-4">
+          <Logo variant="light" imgClassName="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+          <a href={`tel:${PPC_PHONE.replace(/\D/g, '')}`} className="btn btn-primary text-base sm:text-lg px-5 sm:px-6 py-2 sm:py-2.5">
             Call {PPC_PHONE}
           </a>
         </div>

@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
+import { Logo } from '../Logo';
 import { XIcon } from '../icons';
 import { nav } from './nav';
 
@@ -22,8 +23,8 @@ export const MobileNav = ({ isOpen, onClose }: { isOpen: boolean, onClose: () =>
       <div className="absolute inset-0 bg-ink/50 backdrop-blur-sm" onClick={onClose} />
       <div className={`relative w-full max-w-sm bg-white h-full shadow-2xl flex flex-col transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex items-center justify-between p-4 border-b border-line">
-          <span className="font-heading font-bold text-xl text-ink">Menu</span>
-          <button onClick={onClose} className="p-2 text-ink/70 hover:text-ink bg-paper rounded-full">
+          <Logo variant="light" imgClassName="h-10 sm:h-11 w-auto object-contain" />
+          <button onClick={onClose} className="p-2 text-ink/70 hover:text-ink bg-paper rounded-full" aria-label="Close menu">
             <XIcon className="w-6 h-6" />
           </button>
         </div>
