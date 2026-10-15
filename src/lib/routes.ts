@@ -14,7 +14,7 @@ export function servicePage(serviceSlug: string) {
 }
 
 export function emergencyHub() {
-  return '/emergency-plumbing/';
+  return '/emergency-plumber/';
 }
 
 // ── Location routes ──────────────────────────────────────
@@ -56,10 +56,10 @@ export function homePage() {
   return '/';
 }
 export function aboutPage() {
-  return '/about/';
+  return '/about-us/';
 }
 export function contactPage() {
-  return '/contact/';
+  return '/contact-us/';
 }
 export function faqPage() {
   return '/faq/';
@@ -68,10 +68,10 @@ export function requestServicePage() {
   return '/request-service/';
 }
 export function privacyPage() {
-  return '/privacy/';
+  return '/privacy-policy/';
 }
 export function termsPage() {
-  return '/terms/';
+  return '/terms-and-conditions/';
 }
 export function accessibilityPage() {
   return '/accessibility/';

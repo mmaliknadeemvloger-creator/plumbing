@@ -3,8 +3,11 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { pageMeta } from '@/lib/seo';
 import { states, regions, cities } from '@/content/locations';
-import { cityPage, statePage } from '@/lib/routes';
+import { cityPage, statePage, locationHub } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const dynamicParams = false;
 
@@ -21,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!state) return {};
 
   return pageMeta({
-    title: `Plumbing Services in ${state.name}`,
+    title: `Plumbing Services in ${state.name} | Elite Plumbing`,
     description: `Expert plumbing services across ${state.name}. Find your city to see local plumbing information, service areas, and fast response times.`,
     path: statePage(state.slug),
     keywords: [
@@ -44,9 +47,32 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const publishedCities = cities.filter(c => c.stateSlug === state.slug && c.status === 'PUBLISHED');
 
+  const breadcrumbs = [
+    { label: 'Service Areas', href: locationHub() },
+    { label: state.name, href: statePage(state.slug) },
+  ];
+
   return (
     <>
-      <section className="bg-ink pt-20 pb-24 text-white">
+      <JsonLd
+        data={pageGraph({
+          type: 'CollectionPage',
+          path: statePage(state.slug),
+          name: `Plumbing Services in ${state.name} | Elite Plumbing`,
+          description: `Expert plumbing services across ${state.name}.`,
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'Service Areas', item: locationHub() },
+            { name: state.name, item: statePage(state.slug) },
+          ],
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
+      <section className="bg-ink pt-16 pb-20 text-white">
         <div className="container-x">
           <div className="max-w-3xl">
             <span className="eyebrow text-sky mb-4 block">Service Area</span>

@@ -3,11 +3,18 @@ import Link from 'next/link';
 
 const TOPIC_MAP: Record<string, string> = {
   'drain cleaning': '/plumbing-services/drain-cleaning/',
-  'shutoff valve': '/resources/find-water-shutoff-valve/',
-  'water heater': '/plumbing-services/water-heaters/',
-  'emergency plumber': '/emergency-plumbing/',
-  'pipe leak': '/plumbing-services/leak-repair/',
+  'hydro jetting': '/plumbing-services/hydro-jetting/',
+  'sewer line repair': '/plumbing-services/sewer-line-repair/',
+  'water heater': '/plumbing-services/water-heater-services/',
+  'emergency plumber': '/emergency-plumber/',
+  'leak detection': '/plumbing-services/leak-detection/',
+  'pipe repair': '/plumbing-services/pipe-repair/',
   'toilet repair': '/plumbing-services/toilet-repair/',
+  'faucet repair': '/plumbing-services/faucet-repair/',
+  'garbage disposal': '/plumbing-services/garbage-disposal/',
+  'residential plumbing': '/plumbing-services/residential-plumbing/',
+  'commercial plumbing': '/plumbing-services/commercial-plumbing/',
+  'shutoff valve': '/resources/find-water-shutoff-valve/',
 };
 
 export function createLinker(currentPath: string) {

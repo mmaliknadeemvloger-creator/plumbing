@@ -15,7 +15,7 @@ export const CtaBand = () => {
           <Link href="/request-service/" className="btn btn-secondary w-full sm:w-auto justify-center">
             Request a Quote Online
           </Link>
-          <Link href="/contact/" className="btn btn-ghost text-white border-white/20 hover:bg-white/10 w-full sm:w-auto justify-center">
+          <Link href="/contact-us/" className="btn btn-ghost text-white border-white/20 hover:bg-white/10 w-full sm:w-auto justify-center">
             Contact Elite Plumbing
           </Link>
         </div>

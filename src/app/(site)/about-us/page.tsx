@@ -1,13 +1,16 @@
-import { CheckIcon, AlertTriangleIcon, ArrowRightIcon, WrenchIcon, MapPinIcon, PhoneIcon, ThermometerIcon, DropletIcon, ShieldIcon } from '@/components/icons';
+import { CheckIcon, ShieldIcon } from '@/components/icons';
 import { pageMeta } from '@/lib/seo';
 import { DISCLOSURE, BRAND_PROMISE, BRAND } from '@/content/site';
 import { CtaBand } from '@/components/CtaBand';
 import { ZipChecker } from '@/components/ZipChecker';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const metadata = pageMeta({
-  title: 'About Elite Plumbing | Nationwide Plumbing Network',
-  description: 'Learn how Elite Plumbing connects homeowners and businesses across the USA with licensed, pre-screened plumbing contractors for fast, reliable service.',
-  path: '/about/',
+  title: 'About Us | Nationwide Professional Plumbing Network | Elite Plumbing',
+  description: 'Learn how Elite Plumbing connects homeowners and businesses across the USA with licensed, pre-screened plumbing and drain contractors for reliable service.',
+  path: '/about-us/',
   keywords: [
     'about elite plumbing',
     'licensed plumbing network',
@@ -15,12 +18,34 @@ export const metadata = pageMeta({
     'pre-screened plumbers',
     'vetted plumbing contractors',
     'reliable plumbing company',
+    'professional plumbers USA',
   ],
 });
 
 export default function AboutPage() {
+  const breadcrumbs = [
+    { label: 'About Us', href: '/about-us/' }
+  ];
+
   return (
     <div>
+      <JsonLd
+        data={pageGraph({
+          type: 'AboutPage',
+          path: '/about-us/',
+          name: 'About Us | Nationwide Professional Plumbing Network | Elite Plumbing',
+          description: 'Learn how Elite Plumbing connects homeowners and businesses across the USA with licensed, pre-screened plumbing contractors.',
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'About Us', item: '/about-us/' },
+          ],
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
       <section className="bg-ink text-white py-16">
         <div className="container-x max-w-3xl text-center">
           <span className="eyebrow text-sky mb-2 block uppercase tracking-wider font-semibold text-xs">Our Mission</span>

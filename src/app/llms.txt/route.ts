@@ -1,8 +1,14 @@
 import { SITE_URL, BRAND_FULL, DISCLOSURE } from '@/content/site';
-import { homePage, serviceHub, emergencyHub, locationHub, resourceHub, aboutPage, contactPage, faqPage, servicePage, cityPage, guidePage } from '@/lib/routes';
+import { 
+  homePage, serviceHub, emergencyHub, locationHub, 
+  resourceHub, aboutPage, contactPage, faqPage, 
+  requestServicePage, privacyPage, termsPage, servicePage, cityPage, guidePage 
+} from '@/lib/routes';
 import { services } from '@/content/services';
+import { servicesMore } from '@/content/servicesMore';
 import { cities } from '@/content/locations';
 import { articles } from '@/content/articles';
+import { articlesMore } from '@/content/articlesMore';
 import { checkCityQuality } from '@/lib/quality';
 
 export async function GET() {
@@ -16,6 +22,7 @@ export async function GET() {
 
   // Core pages
   addUrl(homePage());
+  addUrl(requestServicePage());
   addUrl(serviceHub());
   addUrl(emergencyHub());
   addUrl(locationHub());
@@ -23,9 +30,12 @@ export async function GET() {
   addUrl(aboutPage());
   addUrl(contactPage());
   addUrl(faqPage());
+  addUrl(privacyPage());
+  addUrl(termsPage());
 
   // Services
-  services.filter(s => s.status === 'PUBLISHED').forEach(s => {
+  const allServices = [...services, ...servicesMore];
+  allServices.filter(s => s.status === 'PUBLISHED').forEach(s => {
     addUrl(servicePage(s.slug));
   });
 
@@ -35,7 +45,8 @@ export async function GET() {
   });
 
   // Guides
-  articles.filter(a => a.status === 'PUBLISHED').forEach(a => {
+  const allArticles = [...articles, ...articlesMore];
+  allArticles.filter(a => a.status === 'PUBLISHED').forEach(a => {
     addUrl(guidePage(a.slug));
   });
 

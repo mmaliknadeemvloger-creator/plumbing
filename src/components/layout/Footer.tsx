@@ -48,8 +48,9 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
           <p>&copy; {new Date().getFullYear()} Elite Plumbing & Drain. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy/" className="hover:text-white">Privacy Policy</Link>
-            <Link href="/terms/" className="hover:text-white">Terms of Service</Link>
+            <Link href="/privacy-policy/" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/terms-and-conditions/" className="hover:text-white">Terms of Service</Link>
+            <Link href="/accessibility/" className="hover:text-white">Accessibility</Link>
           </div>
         </div>
       </div>

@@ -6,11 +6,14 @@ import { cities, states } from '@/content/locations';
 import { services } from '@/content/services';
 import { servicesMore } from '@/content/servicesMore';
 import { cityServices } from '@/content/cityServices';
-import { cityPage, statePage, cityServicePage, servicePage } from '@/lib/routes';
+import { cityPage, statePage, cityServicePage, servicePage, locationHub } from '@/lib/routes';
 import { checkCityQuality } from '@/lib/quality';
 import { CtaBand } from '@/components/CtaBand';
 import { FaqList } from '@/components/FaqList';
 import { LeadFormBlock } from '@/components/lead/LeadFormBlock';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const dynamicParams = false;
 
@@ -36,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
 
   return pageMeta({
     title: `Plumbing Services in ${city.name}, ${stateAbbrev} | Elite Plumbing`,
-    description: city.intro.substring(0, 155) + '...',
+    description: city.intro.replace(/["""]/g, '').substring(0, 145).trim() + '...',
     path: cityPage(stateSlug, citySlug),
     keywords: [
       `plumber in ${city.name} ${stateAbbrev}`,
@@ -63,9 +66,35 @@ export default async function CityPage({ params }: { params: Promise<{ state: st
   const state = states.find(s => s.slug === stateSlug)!;
   const stateAbbrev = state.abbreviation;
 
+  const breadcrumbs = [
+    { label: 'Service Areas', href: locationHub() },
+    { label: state.name, href: statePage(state.slug) },
+    { label: city.name, href: cityPage(stateSlug, citySlug) },
+  ];
+
   return (
     <>
-      <section className="bg-ink pt-20 pb-24 text-white">
+      <JsonLd
+        data={pageGraph({
+          type: 'WebPage',
+          path: cityPage(stateSlug, citySlug),
+          name: `Plumbing Services in ${city.name}, ${stateAbbrev} | Elite Plumbing`,
+          description: city.intro,
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'Service Areas', item: locationHub() },
+            { name: state.name, item: statePage(state.slug) },
+            { name: city.name, item: cityPage(stateSlug, citySlug) },
+          ],
+          faqs: city.faqs,
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
+      <section className="bg-ink pt-16 pb-20 text-white">
         <div className="container-x">
           <div className="max-w-3xl">
             <span className="eyebrow text-sky mb-4 block">Local Plumbing Service</span>

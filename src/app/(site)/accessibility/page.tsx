@@ -1,8 +1,9 @@
 import { pageMeta } from '@/lib/seo';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata = pageMeta({
-  title: 'Accessibility Statement',
-  description: 'Accessibility Statement — Elite Plumbing & Drain, serving Charlotte, NC metro and York County, SC.',
+  title: 'Accessibility Statement | Elite Plumbing',
+  description: 'Accessibility Statement for Elite Plumbing & Drain. We are dedicated to ensuring digital accessibility and WCAG 2.1 compliance across our website.',
   path: '/accessibility/',
   keywords: [
     'accessibility statement',
@@ -13,10 +14,20 @@ export const metadata = pageMeta({
 });
 
 export default function AccessibilityPage() {
+  const breadcrumbs = [
+    { label: 'Accessibility', href: '/accessibility/' }
+  ];
+
   return (
-    <div className="py-16">
-      <div className="container-x max-w-3xl prose-sw">
-        <h1 className="text-4xl font-heading font-bold mb-8">Accessibility Statement</h1>
+    <div>
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} />
+        </div>
+      </div>
+      <div className="py-16">
+        <div className="container-x max-w-3xl prose-sw">
+          <h1 className="text-4xl font-heading font-bold mb-8">Accessibility Statement</h1>
         
         <p>Elite Plumbing & Drain is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
         
@@ -25,6 +36,7 @@ export default function AccessibilityPage() {
         
         <h2>Feedback</h2>
         <p>We welcome your feedback on the accessibility of our website. If you encounter any accessibility barriers, please contact us.</p>
+        </div>
       </div>
     </div>
   );

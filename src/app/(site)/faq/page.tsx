@@ -6,10 +6,11 @@ import { JsonLd } from '@/components/JsonLd';
 import { pageGraph } from '@/lib/schema';
 import Link from 'next/link';
 import { serviceHub, locationHub } from '@/lib/routes';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 export const metadata = pageMeta({
-  title: 'Frequently Asked Plumbing Questions | Elite Plumbing',
-  description: 'Find answers to common plumbing questions about emergency repairs, drain cleaning, water heaters, leak detection, and pricing across the USA.',
+  title: 'Frequently Asked Questions | Plumbing Help | Elite Plumbing',
+  description: 'Get clear answers to common plumbing questions about drain cleaning, leak detection, water heaters, pipe repairs, emergency dispatch, and repair costs.',
   path: '/faq/',
   keywords: [
     'plumbing faq',
@@ -22,17 +23,30 @@ export const metadata = pageMeta({
 });
 
 export default function FaqPage() {
+  const breadcrumbs = [
+    { label: 'FAQ', href: '/faq/' }
+  ];
+
   return (
     <div>
       <JsonLd
         data={pageGraph({
           type: 'FAQPage',
           path: '/faq/',
-          name: 'Frequently Asked Plumbing Questions | Elite Plumbing',
+          name: 'Frequently Asked Questions | Plumbing & Drain Help | Elite Plumbing',
           description: 'Answers to common residential and commercial plumbing questions across the USA.',
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'FAQ', item: '/faq/' },
+          ],
           faqs: generalFaqs,
         })}
       />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
       <section className="bg-ink text-white py-16 text-center">
         <div className="container-x max-w-3xl">
           <span className="eyebrow text-sky mb-2 block uppercase tracking-wider font-semibold text-xs">Help & Advice</span>

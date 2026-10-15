@@ -16,7 +16,12 @@ export function checkCityQuality(city: City): { pass: boolean; reasons: string[]
     reasons.push('Needs at least 3 popular services');
   }
 
-  const copy = [city.intro, city.housingNotes]
+  const copy = [
+    city.intro,
+    city.housingNotes,
+    ...(city.localIssues || []).map(i => `${i.title} ${i.description}`),
+    ...(city.faqs || []).map(f => `${f.question} ${f.answer}`)
+  ]
     .filter(Boolean)
     .join(' ');
   const wordCount = copy.split(/\s+/).filter(Boolean).length;

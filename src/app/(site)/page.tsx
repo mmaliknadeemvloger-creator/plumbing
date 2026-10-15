@@ -19,24 +19,25 @@ import { requestServicePage, emergencyHub, servicePage, guidePage, locationHub, 
 import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
-  title: 'Professional Plumbing Services Across the USA | Elite Plumbing',
-  description: 'Elite Plumbing delivers trusted plumbing services across the USA. Connect with licensed plumbers for 24/7 emergency repairs, drain cleaning, leak repair, water heaters, and residential & commercial plumbing nationwide.',
+  title: 'Plumbing & Drain Services | Professional Plumbing Solutions',
+  description: 'Explore professional plumbing and drain solutions, including drain cleaning, leak detection, pipe repairs, and water heater services. Find the right service today.',
   path: '/',
   keywords: [
-    'plumbing services',
-    'licensed plumbers',
+    'plumbing services USA',
+    'plumbing and drain services',
+    'professional plumber',
     'emergency plumber',
-    '24/7 plumbing repair',
-    'drain cleaning service',
-    'water heater repair',
-    'water heater installation',
-    'leak detection',
+    'plumbing repair services',
+    'drain cleaning services',
     'sewer line repair',
-    'pipe repair contractors',
-    'commercial plumbing',
-    'residential plumbing',
-    'find local plumber',
-    'trusted plumbing contractors',
+    'water heater repair',
+    'leak detection services',
+    'residential plumbing services',
+    'commercial plumbing services',
+    '24 hour emergency plumber',
+    'clogged drain repair',
+    'pipe repair and replacement',
+    'hydro jetting services',
   ],
 });
 
@@ -76,12 +77,13 @@ export default function HomePage() {
         data={pageGraph({
           type: 'WebPage',
           path: '/',
-          name: 'Professional Plumbing Services Across the USA | Elite Plumbing',
-          description: 'Trusted residential and commercial plumbing services across the USA. Connect with licensed plumbers nationwide for fast dispatch, upfront pricing, and guaranteed repairs.',
+          name: 'Plumbing & Drain Services | Professional Plumbing Solutions',
+          description: 'Explore professional plumbing and drain solutions, including drain cleaning, leak detection, pipe repairs, and water heater services across the USA.',
           faqs: nationwideFaqs,
           keywords: [
-            'plumbing services',
-            'licensed plumbers',
+            'plumbing services USA',
+            'plumbing and drain services',
+            'professional plumber',
             'emergency plumber',
             'drain cleaning',
             'water heater repair',
@@ -101,10 +103,10 @@ export default function HomePage() {
                 <ShieldIcon className="w-4 h-4 text-sky" /> Trusted Plumbing Services Nationwide
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 leading-tight">
-                Professional Plumbing Services Across the USA
+                Professional Plumbing & Drain Services Across the USA
               </h1>
               <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl leading-relaxed">
-                Reliable plumbing solutions for homes and businesses nationwide. Connect with licensed, pre-screened plumbing contractors for fast dispatch, upfront pricing, and guaranteed workmanship.
+                Reliable plumbing and drain solutions for homes and businesses across the United States. Connect with licensed, pre-screened plumbing contractors for fast dispatch, upfront pricing, and guaranteed workmanship.
               </p>
               
               {/* Primary Conversion CTAs */}
@@ -116,7 +118,7 @@ export default function HomePage() {
                   Request a Quote
                 </Link>
                 <Link href={contactPage()} className="btn btn-ghost text-white border-white/20 hover:bg-white/10 text-lg justify-center">
-                  Contact Elite Plumbing
+                  Contact Us
                 </Link>
               </div>
 

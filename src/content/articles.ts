@@ -468,7 +468,7 @@ export const articles: Article[] = [
     category: 'DIY Tips',
     title: 'When to Call a Plumber vs DIY',
     status: 'PUBLISHED',
-    seoTitle: 'When to Call a Plumber vs DIY Plumbing Repair | Elite Plumbing & Drain',
+    seoTitle: 'When to Call a Plumber vs DIY Plumbing Repair | Elite Plumbing',
     metaDescription: 'Unsure if you should fix a plumbing issue yourself? Learn when it\'s safe to DIY and when you absolutely must call a licensed professional plumber.',
     h1: 'When to Call a Plumber vs DIY',
     answer: 'You can handle minor clogs, faucet drips, and toilet flapper replacements yourself. However, you should immediately call a plumber for hidden leaks, mainline sewer backups, gas line issues, or major appliance installations.',

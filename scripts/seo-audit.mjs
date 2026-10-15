@@ -3,6 +3,10 @@ import path from 'path';
 
 const BASE = process.env.BASE || 'http://localhost:3000';
 
+function toLocal(url) {
+  return url.replace(/^https?:\/\/[^\/]+/, BASE);
+}
+
 async function fetchHtml(url) {
   const res = await fetch(url);
   const text = await res.text();
@@ -19,7 +23,7 @@ async function getSitemapUrls() {
     if (text.includes('<sitemapindex')) {
       const sitemaps = [...text.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]);
       for (const sm of sitemaps) {
-        const smRes = await fetch(sm);
+        const smRes = await fetch(toLocal(sm));
         const smText = await smRes.text();
         sitemapUrls.push(...[...smText.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1]));
       }
@@ -64,28 +68,35 @@ function checkRobots(robotsTxt, urlPath) {
 }
 
 async function getClickDepth() {
-  const queue = [{ url: `${BASE}/`, depth: 0 }];
+  const queue = [{ path: '/', depth: 0 }];
   const visited = new Set();
   const depths = new Map();
   
   while (queue.length > 0) {
-    const { url, depth } = queue.shift();
-    if (visited.has(url)) continue;
-    visited.add(url);
-    depths.set(url, depth);
+    const { path: currentPath, depth } = queue.shift();
+    if (visited.has(currentPath)) continue;
+    visited.add(currentPath);
+    depths.set(currentPath, depth);
     
     if (depth < 3) {
       try {
-        const { status, text } = await fetchHtml(url);
+        const { status, text } = await fetchHtml(`${BASE}${currentPath}`);
         if (status === 200) {
           const links = [...text.matchAll(/<a\s+(?:[^>]*?\s+)?href=["'](.*?)["']/gi)].map(m => m[1]);
           for (let link of links) {
-            if (link.startsWith('/')) link = `${BASE}${link}`;
-            if (link.startsWith(BASE)) {
-              link = link.split('#')[0];
-              if (!visited.has(link)) {
-                queue.push({ url: link, depth: depth + 1 });
+            let p = link.split('#')[0];
+            if (p.startsWith(BASE)) {
+              p = p.replace(BASE, '');
+            } else if (p.startsWith('http://') || p.startsWith('https://')) {
+              try {
+                const parsed = new URL(p);
+                p = parsed.pathname;
+              } catch {
+                continue;
               }
+            }
+            if (p.startsWith('/') && !visited.has(p)) {
+              queue.push({ path: p, depth: depth + 1 });
             }
           }
         }
@@ -113,9 +124,14 @@ async function runAudit() {
   const descriptions = new Map();
   
   for (const url of sitemapUrls) {
-    const urlPath = url.replace(BASE, '');
+    let urlPath;
     try {
-      const { status, text } = await fetchHtml(url);
+      urlPath = new URL(url).pathname;
+    } catch {
+      urlPath = url.replace(BASE, '');
+    }
+    try {
+      const { status, text } = await fetchHtml(toLocal(url));
       
       if (status !== 200) {
         errors.push(`[${url}] Status code is ${status}`);
@@ -172,7 +188,7 @@ async function runAudit() {
         errors.push(`[${url}] URL is disallowed in robots.txt but found in sitemap`);
       }
       
-      if (!depths.has(url) || depths.get(url) > 3) {
+      if (!depths.has(urlPath) || depths.get(urlPath) > 3) {
         errors.push(`[${url}] Click depth from homepage > 3 or unreachable`);
       }
       

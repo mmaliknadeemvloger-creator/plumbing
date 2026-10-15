@@ -10,9 +10,30 @@ const nextConfig: NextConfig = {
   },
 
   async redirects() {
-    // Add content redirects here as needed.
-    // Cannot import from src/ here; inline them directly.
-    return [];
+    return [
+      { source: '/about', destination: '/about-us/', permanent: true },
+      { source: '/contact', destination: '/contact-us/', permanent: true },
+      { source: '/privacy', destination: '/privacy-policy/', permanent: true },
+      { source: '/terms', destination: '/terms-and-conditions/', permanent: true },
+      { source: '/emergency-plumbing', destination: '/emergency-plumber/', permanent: true },
+      { source: '/service-areas', destination: '/locations/', permanent: true },
+      { source: '/drain-cleaning', destination: '/plumbing-services/drain-cleaning/', permanent: true },
+      { source: '/sewer-line-repair', destination: '/plumbing-services/sewer-line-repair/', permanent: true },
+      { source: '/water-heater-repair', destination: '/plumbing-services/water-heater-repair/', permanent: true },
+      { source: '/leak-detection', destination: '/plumbing-services/leak-detection/', permanent: true },
+      { source: '/pipe-repair', destination: '/plumbing-services/pipe-repair/', permanent: true },
+      { source: '/toilet-repair', destination: '/plumbing-services/toilet-repair/', permanent: true },
+      { source: '/faucet-repair', destination: '/plumbing-services/faucet-repair/', permanent: true },
+      { source: '/garbage-disposal-repair', destination: '/plumbing-services/garbage-disposal/', permanent: true },
+      { source: '/plumbing-services/garbage-disposal-repair', destination: '/plumbing-services/garbage-disposal/', permanent: true },
+      { source: '/hydro-jetting', destination: '/plumbing-services/hydro-jetting/', permanent: true },
+      { source: '/residential-plumbing', destination: '/plumbing-services/residential-plumbing/', permanent: true },
+      { source: '/commercial-plumbing', destination: '/plumbing-services/commercial-plumbing/', permanent: true },
+      { source: '/plumbing-maintenance', destination: '/plumbing-services/plumbing-inspection/', permanent: true },
+      { source: '/plumbing-services/plumbing-maintenance', destination: '/plumbing-services/plumbing-inspection/', permanent: true },
+      { source: '/water-heater-services', destination: '/plumbing-services/water-heater-services/', permanent: true },
+      { source: '/leak-repair', destination: '/plumbing-services/leak-repair/', permanent: true },
+    ];
   },
 
   async headers() {
@@ -43,10 +64,6 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/api/:path*',
-        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
-      },
-      {
-        source: '/request-service/:path*',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
       },
       {

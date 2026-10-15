@@ -7,6 +7,7 @@ import { CtaBand } from '@/components/CtaBand';
 import { CheckIcon, AlertTriangleIcon, PhoneIcon } from '@/components/icons';
 import { PHONE, PHONE_E164 } from '@/content/site';
 import { servicePage } from '@/lib/routes';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
 
 interface ServiceTemplateProps {
   service: Service;
@@ -33,6 +34,17 @@ export function ServiceTemplate({ service, localAngle, localFaqs }: ServiceTempl
 
   return (
     <div>
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs
+            items={[
+              { label: 'Plumbing Services', href: '/plumbing-services/' },
+              { label: service.name, href: servicePage(service.slug) },
+            ]}
+            hideSchema={true}
+          />
+        </div>
+      </div>
       {/* Hero */}
       <section className="bg-ink text-white py-16 md:py-20">
         <div className="container-x">

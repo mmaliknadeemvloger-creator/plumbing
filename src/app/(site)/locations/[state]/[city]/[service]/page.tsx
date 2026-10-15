@@ -54,6 +54,10 @@ export async function generateMetadata({
   });
 }
 
+import { JsonLd } from '@/components/JsonLd';
+import { serviceGraph } from '@/lib/schema';
+import { locationHub, statePage, cityPage } from '@/lib/routes';
+
 export default async function CityServicePage({
   params,
 }: {
@@ -72,11 +76,35 @@ export default async function CityServicePage({
     notFound();
   }
 
+  const breadcrumbs = [
+    { name: 'Home', item: '/' },
+    { name: 'Service Areas', item: locationHub() },
+    { name: state!.name, item: statePage(stateSlug) },
+    { name: city!.name, item: cityPage(stateSlug, citySlug) },
+    { name: service!.name, item: cityServicePage(stateSlug, citySlug, serviceSlug) },
+  ];
+
   return (
-    <ServiceTemplate
-      service={service!}
-      localAngle={cs!.localAngle}
-      localFaqs={cs!.localFaqs}
-    />
+    <>
+      <JsonLd
+        data={serviceGraph({
+          name: `${service!.name} in ${city!.name}, ${state!.abbreviation}`,
+          description: `${service!.name} in ${city!.name}, ${state!.abbreviation}. Professional local plumbing services.`,
+          path: cityServicePage(stateSlug, citySlug, serviceSlug),
+          category: service!.category,
+          faqs: cs!.localFaqs ?? service!.faqs,
+          breadcrumbs: breadcrumbs,
+          keywords: [
+            `${service!.name.toLowerCase()} in ${city!.name}`,
+            `plumber ${city!.name}`,
+          ],
+        })}
+      />
+      <ServiceTemplate
+        service={service!}
+        localAngle={cs!.localAngle}
+        localFaqs={cs!.localFaqs}
+      />
+    </>
   );
 }

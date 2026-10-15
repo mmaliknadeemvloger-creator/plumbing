@@ -392,7 +392,7 @@ export const cities: City[] = [
         description: 'Residents in newer developments often report hard water issues that lead to premature wear on modern, high-efficiency appliances and tankless water heaters without proper filtration.'
       }
     ],
-    popularServices: ['tankless-water-heater', 'water-heater-repair', 'water-filtration', 'faucet-repair', 'leak-detection'],
+    popularServices: ['sewer-line-repair', 'tankless-water-heater', 'water-heater-repair', 'water-filtration', 'faucet-repair', 'leak-detection'],
     nearby: ['rock-hill', 'tega-cay', 'pineville', 'charlotte'],
     faqs: [
       {

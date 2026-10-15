@@ -20,6 +20,7 @@ export default function robots(): MetadataRoute.Robots {
       disallow: [
         '/api/',
         '/thank-you/',
+        '/lp/',
         '/*?*utm_*',
         '/*?*gclid=*',
       ],

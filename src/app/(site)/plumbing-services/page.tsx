@@ -7,24 +7,27 @@ import { servicesMore } from '@/content/servicesMore';
 import { servicePage, emergencyHub } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
 import { PlumbingSolutionsSection } from '@/components/PlumbingSolutionsSection';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const metadata = pageMeta({
-  title: 'Plumbing Services Across the USA | Elite Plumbing',
-  description: 'Explore our complete list of residential and commercial plumbing services across the USA. Fast drain cleaning, water heater repair, leak detection, repiping, and 24/7 emergency dispatch.',
+  title: 'Plumbing and Drain Services | Full Service Catalog | Elite Plumbing',
+  description: 'Browse our full catalog of residential and commercial plumbing and drain services across the USA. Fast drain cleaning, leak detection, water heaters, and repiping.',
   path: '/plumbing-services/',
   keywords: [
-    'plumbing services',
-    'drain cleaning',
-    'water heater installation',
+    'plumbing and drain services',
+    'plumbing services USA',
+    'professional plumber',
+    'emergency plumber',
+    'plumbing repair services',
+    'drain cleaning services',
+    'sewer line repair',
     'water heater repair',
-    'leak detection service',
-    'pipe repair',
-    'sewer line replacement',
-    'hydro jetting',
-    'slab leak repair',
-    'faucet and toilet repair',
-    'commercial plumbing services',
+    'leak detection services',
     'residential plumbing services',
+    'commercial plumbing services',
+    'hydro jetting services',
   ],
 });
 
@@ -44,14 +47,35 @@ function getServicePhoto(categorySlug: string): string {
 export default function ServicesHubPage() {
   const allServices = [...services, ...servicesMore].filter(s => s.status === 'PUBLISHED');
 
+  const breadcrumbs = [
+    { label: 'Plumbing Services', href: '/plumbing-services/' }
+  ];
+
   return (
     <>
-      <section className="bg-ink pt-20 pb-24 text-white">
+      <JsonLd
+        data={pageGraph({
+          type: 'CollectionPage',
+          path: '/plumbing-services/',
+          name: 'Plumbing and Drain Services | Full Service Catalog | Elite Plumbing',
+          description: 'Browse our full catalog of residential and commercial plumbing and drain services across the USA.',
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'Plumbing Services', item: '/plumbing-services/' },
+          ],
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
+      <section className="bg-ink pt-16 pb-20 text-white">
         <div className="container-x">
           <div className="max-w-3xl">
             <span className="eyebrow text-sky mb-4 block uppercase tracking-wider font-semibold text-xs">Full-Service Catalog</span>
             <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-              Professional Plumbing Services Across the USA
+              Professional Plumbing and Drain Services Across the USA
             </h1>
             <p className="text-xl text-white/80">
               From emergency clog removal and water heater replacements to complex commercial build-outs, our licensed plumbers deliver dependable, code-compliant workmanship nationwide.

@@ -5,9 +5,12 @@ import { articles } from '@/content/articles';
 import { articlesMore } from '@/content/articlesMore';
 import { resourceHub, guidePage } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const metadata = pageMeta({
-  title: 'Plumbing Guides & Resources | Elite Plumbing',
+  title: 'Plumbing Guides & Homeowner Resources | Elite Plumbing',
   description: 'Expert plumbing guides, DIY tips, and answers to common household water and pipe issues. Learn how to maintain your home\'s plumbing.',
   path: resourceHub(),
   keywords: [
@@ -33,9 +36,30 @@ export default function ResourcesHubPage() {
     categoriesMap.get(a.category)!.push(a);
   });
 
+  const breadcrumbs = [
+    { label: 'Resources', href: resourceHub() }
+  ];
+
   return (
     <>
-      <section className="bg-ink pt-20 pb-24 text-white">
+      <JsonLd
+        data={pageGraph({
+          type: 'CollectionPage',
+          path: resourceHub(),
+          name: 'Plumbing Guides & Homeowner Resources | Elite Plumbing',
+          description: 'Expert plumbing advice, maintenance tips, and troubleshooting guides.',
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'Resources', item: resourceHub() },
+          ],
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
+      <section className="bg-ink pt-16 pb-20 text-white">
         <div className="container-x">
           <div className="max-w-3xl">
             <span className="eyebrow text-sky mb-4 block">Knowledge Base</span>

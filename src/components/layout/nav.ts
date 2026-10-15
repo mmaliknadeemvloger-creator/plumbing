@@ -1,6 +1,6 @@
 export const nav = {
   services: [
-    { title: 'Emergency Plumbing', href: '/emergency-plumbing/' },
+    { title: 'Emergency Plumbing', href: '/emergency-plumber/' },
     { title: 'Residential Plumbing', href: '/plumbing-services/residential-plumbing/' },
     { title: 'Commercial Plumbing', href: '/plumbing-services/commercial-plumbing/' },
     { title: 'Drain Cleaning', href: '/plumbing-services/drain-cleaning/' },
@@ -48,8 +48,8 @@ export const nav = {
     },
   ],
   company: [
-    { title: 'About', href: '/about/' },
-    { title: 'Contact', href: '/contact/' },
+    { title: 'About Us', href: '/about-us/' },
+    { title: 'Contact Us', href: '/contact-us/' },
     { title: 'FAQ', href: '/faq/' },
     { title: 'Resources', href: '/resources/' },
   ],

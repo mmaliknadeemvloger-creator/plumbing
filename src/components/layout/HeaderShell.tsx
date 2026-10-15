@@ -28,8 +28,8 @@ export const HeaderShell = () => {
           
           <div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
             <MegaMenu />
-            <Link href="/about/" className="font-medium text-ink hover:text-sky transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-sky after:transition-all hover:after:w-full">About</Link>
-            <Link href="/contact/" className="font-medium text-ink hover:text-sky transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-sky after:transition-all hover:after:w-full">Contact</Link>
+            <Link href="/about-us/" className="font-medium text-ink hover:text-sky transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-sky after:transition-all hover:after:w-full">About</Link>
+            <Link href="/contact-us/" className="font-medium text-ink hover:text-sky transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-sky after:transition-all hover:after:w-full">Contact</Link>
           </div>
 
           <div className="hidden lg:flex items-center gap-6">

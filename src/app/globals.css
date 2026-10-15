@@ -24,8 +24,8 @@
   --color-sage: #4F6B5B;
   --color-sage-tint: #EDF3EF;
 
-  --font-heading: var(--font-source-serif), 'Georgia', serif;
-  --font-body: var(--font-inter-tight), 'system-ui', sans-serif;
+  --font-heading: 'Source Serif 4', 'Georgia', serif;
+  --font-body: 'Inter Tight', 'system-ui', -apple-system, sans-serif;
 
   --radius-btn: 6px;
   --radius-card: 16px;

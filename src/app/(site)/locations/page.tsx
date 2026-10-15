@@ -5,6 +5,9 @@ import { states, regions, cities } from '@/content/locations';
 import { locationHub, statePage, cityPage } from '@/lib/routes';
 import { CtaBand } from '@/components/CtaBand';
 import { ZipChecker } from '@/components/ZipChecker';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const metadata = pageMeta({
   title: 'Plumbing Service Areas & Local Regions | Elite Plumbing',
@@ -24,9 +27,30 @@ export const metadata = pageMeta({
 export default function LocationsHubPage() {
   const publishedCities = cities.filter(c => c.status === 'PUBLISHED');
 
+  const breadcrumbs = [
+    { label: 'Service Areas', href: locationHub() }
+  ];
+
   return (
     <>
-      <section className="bg-ink pt-20 pb-24 text-white">
+      <JsonLd
+        data={pageGraph({
+          type: 'CollectionPage',
+          path: locationHub(),
+          name: 'Plumbing Service Areas & Local Regions | Elite Plumbing',
+          description: 'Explore active local service areas and regional hubs across North and South Carolina.',
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'Service Areas', item: locationHub() },
+          ],
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
+      <section className="bg-ink pt-16 pb-20 text-white">
         <div className="container-x">
           <div className="max-w-3xl mb-12">
             <span className="eyebrow text-sky mb-4 block uppercase tracking-wider font-semibold text-xs">Regional Service Hubs</span>

@@ -1,8 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { ChevronRightIcon, HomeIcon } from './icons';
+import { SITE_URL } from '@/content/site';
 
-export const Breadcrumbs = ({ items }: { items: { label: string; href?: string }[] }) => {
+export const Breadcrumbs = ({ 
+  items, 
+  hideSchema = false 
+}: { 
+  items: { label: string; href?: string }[]; 
+  hideSchema?: boolean;
+}) => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -11,20 +18,22 @@ export const Breadcrumbs = ({ items }: { items: { label: string; href?: string }
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.eliteplumbingdrain.com/',
+        item: `${SITE_URL}/`,
       },
       ...items.map((item, index) => ({
         '@type': 'ListItem',
         position: index + 2,
         name: item.label,
-        item: item.href ? `https://www.eliteplumbingdrain.com${item.href}` : undefined,
+        item: item.href ? `${SITE_URL}${item.href}` : undefined,
       }))
     ]
   };
 
   return (
-    <nav aria-label="Breadcrumb" className="py-4">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <nav aria-label="Breadcrumb" className="py-3">
+      {!hideSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      )}
       <ol className="flex items-center gap-2 text-sm text-ink/70">
         <li>
           <Link href="/" className="hover:text-sky transition-colors flex items-center">

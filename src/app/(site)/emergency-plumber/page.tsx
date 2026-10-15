@@ -8,23 +8,26 @@ import { CtaBand } from '@/components/CtaBand';
 import { PhoneLink } from '@/components/PhoneLink';
 import { FaqList } from '@/components/FaqList';
 import { SectionHeading } from '@/components/ui';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { JsonLd } from '@/components/JsonLd';
+import { pageGraph } from '@/lib/schema';
 
 export const metadata = pageMeta({
-  title: '24/7 Emergency Plumbing Services Across the USA | Elite Plumbing',
-  description: 'Need an emergency plumber? 24/7 emergency plumbing services across the USA for burst pipes, active water leaks, severe drain backups, and gas leaks. Fast dispatch.',
+  title: 'Emergency Plumbing Services | Urgent Plumbing Help | Elite Plumbing',
+  description: 'Emergency plumbing services for urgent plumbing help across the USA. Connect with a 24-hour emergency plumber for burst pipes, active leaks, and sewer backups.',
   path: emergencyHub(),
   keywords: [
     'emergency plumber',
-    '24 hour emergency plumbing',
-    'urgent plumbing repair',
+    '24 hour emergency plumber',
+    'emergency plumbing services',
+    'urgent plumbing help',
+    '24 hour plumber near me',
     'burst pipe repair',
     'overflowing toilet emergency',
     'emergency drain cleaning',
-    'water heater leaking',
+    'water leak emergency',
     'sewer backup emergency',
-    'after hours plumber',
     'immediate plumbing dispatch',
-    'emergency plumber near me',
   ],
 });
 
@@ -46,13 +49,41 @@ export default function EmergencyPlumbingPage() {
     }
   ];
 
+  const breadcrumbs = [
+    { label: 'Emergency Plumber', href: emergencyHub() }
+  ];
+
   return (
     <>
-      <section className="bg-alert pt-20 pb-24 text-white">
+      <JsonLd
+        data={pageGraph({
+          type: 'WebPage',
+          path: emergencyHub(),
+          name: 'Emergency Plumbing Services | Urgent 24 Hour Emergency Plumber | Elite Plumbing',
+          description: 'Emergency plumbing services for urgent plumbing help across the USA. Connect with a 24-hour emergency plumber for burst pipes, active leaks, and sewer backups.',
+          breadcrumbs: [
+            { name: 'Home', item: '/' },
+            { name: 'Emergency Plumbing', item: emergencyHub() },
+          ],
+          faqs: faqs,
+          keywords: [
+            'emergency plumber',
+            '24 hour emergency plumber',
+            'emergency plumbing services',
+            'urgent plumbing help',
+          ],
+        })}
+      />
+      <div className="bg-paper border-b border-line">
+        <div className="container-x">
+          <Breadcrumbs items={breadcrumbs} hideSchema={true} />
+        </div>
+      </div>
+      <section className="bg-alert pt-16 pb-20 text-white">
         <div className="container-x text-center max-w-4xl mx-auto">
           <span className="eyebrow text-white/90 mb-4 block uppercase tracking-wider font-semibold text-xs">24/7 Nationwide Emergency Dispatch</span>
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6">
-            24/7 Emergency Plumbing Services Across the USA
+            24 Hour Emergency Plumber & Urgent Plumbing Services
           </h1>
           <p className="text-xl text-white/90 mb-10">
             Water damage spreads fast. If you have a burst pipe, active leak, or major sewer backup, call right now for immediate emergency dispatch.
