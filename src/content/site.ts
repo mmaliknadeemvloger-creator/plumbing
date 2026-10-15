@@ -21,8 +21,8 @@ export const DISCLOSURE =
   'When you request service, your information is routed to qualified, background-checked plumbers serving your local area.';
 
 // ── Contact ──────────────────────────────────────────────
-const TEMP_PHONE = '(800) 555-0199';
-const TEMP_PHONE_E164 = '+18005550199';
+const TEMP_PHONE = '(619) 782-6581';
+const TEMP_PHONE_E164 = '+16197826581';
 
 export const PHONE = env('NEXT_PUBLIC_BUSINESS_PHONE') || TEMP_PHONE;
 export const PHONE_E164 = env('NEXT_PUBLIC_BUSINESS_PHONE_E164') || TEMP_PHONE_E164;
