@@ -8,7 +8,7 @@ const env = (key: string) => process.env[key] ?? '';
 export const BRAND = 'Elite Plumbing & Drain' as const;
 export const BRAND_FULL = 'Elite Plumbing & Drain' as const;
 export const BRAND_SHORT = 'Elite Plumbing' as const;
-export const BRAND_DOMAIN = 'eliteplumbingdrain.com' as const;
+export const BRAND_DOMAIN = 'www.eliteplumbingdrainusa.com' as const;
 
 export const BRAND_PROMISE = [
   'Upfront pricing — no surprise charges',
